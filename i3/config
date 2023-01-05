@@ -17,6 +17,18 @@ font pango:monospace 8
 
 # Exec apps
 exec --no-startup-id polybar
+#exec --no-startup-id redshift
+#exec --no-startup-id dunst
+exec --no-startup-id sxhkd
+
+# default_border none and remove the title of brosers
+default_floating_border normal
+for_window [floating] border normal
+for_window [tiling] border none
+
+# Set inner/outer gaps
+gaps inner 20
+gaps outer -3
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -57,8 +69,12 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# Start the rofi
+bindsym $mod+d exec --no-startup-id rofi -show drun
+#bindsym $mod+d exec --no-startup-id rofi -show run -font "recersive 14"
+
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+m exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -188,6 +204,6 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        status_command i3status
-}
+#bar {
+#        status_command i3status
+#}
