@@ -20,6 +20,9 @@ exec --no-startup-id polybar
 #exec --no-startup-id redshift
 #exec --no-startup-id dunst
 exec --no-startup-id sxhkd
+# Exec restore the wallpaper with nitrogen
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id picom
 
 # default_border none and remove the title of brosers
 default_floating_border normal
