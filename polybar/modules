@@ -51,6 +51,16 @@ format-prefix-foreground = ${color.CYAN}
 tail = true
 click-left = ~/.config/polybar/scripts/bluetooth.sh --toggle &
 
+[module/ibus]
+type = custom/script
+exec = ibus engine
+tail = true
+
+format-prefix = "  "
+format-prefix-foreground = #d699b6
+
+click-left = bash ~/.config/polybar/scripts/ibus.sh
+
 [module/volume]
 type = internal/pulseaudio
 
@@ -236,25 +246,41 @@ animation-charging-framerate = 750
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 
+# [module/sep]
+# type = custom/text
+# content = ◆
+
+# content-background = ${color.BACKGROUND}
+# content-foreground = ${color.BLACK}
+# content-padding = 2
+
+# [module/mod]
+# ;;type = internal/bspwm
+# type = internal/i3
+
+# format = <label-mode>
+# format-background = ${color.YELLOW}
+# format-foreground = ${color.BACKGROUND}
+# format-padding = 1
+
+# label-monocle = "Monocle"
+# label-tiled = "Tiled"
+
+# label-floating = ", Float"
+# label-pseudotiled = ", Pseudo"
+# label-fullscreen = ", Full"
+
+# label-locked = " | Locked"
+# label-sticky = " | Sticky"
+# label-private = " | Private"
+
 [module/mod]
-;;type = internal/bspwm
-type = internal/i3
+type = custom/text
+content = "Tiled"
 
-format = <label-mode>
-format-background = ${color.YELLOW}
-format-foreground = ${color.BACKGROUND}
-format-padding = 1
-
-label-monocle = "Monocle"
-label-tiled = "Tiled"
-
-label-floating = ", Float"
-label-pseudotiled = ", Pseudo"
-label-fullscreen = ", Full"
-
-label-locked = " | Locked"
-label-sticky = " | Sticky"
-label-private = " | Private"
+content-background = ${color.YELLOW}
+content-foreground = ${color.BLACK}
+content-padding = 1
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -277,72 +303,43 @@ format-underline = #16a085
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
+
 [module/i3]
 type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
 
-pin-workspaces = true
-inline-mode = false
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
 
-enable-click = true
-enable-scroll = true
-reverse-scroll = true
+label-mode-padding = 1
+label-mode-foreground = #000
+label-mode-background = ${color.BLUE}
 
-fuzzy-match = true
-
-; ws-icon-[0-9]+ = label;icon
-; Note that the label needs to correspond with the bspwm workspace name
-# ws-icon-0 = I;
-# ws-icon-1 = II;
-# ws-icon-2 = III;
-# ws-icon-3 = IV;
-# ws-icon-4 = V;
-# ws-icon-5 = VI;
-# ws-icon-6 = VII;
-# ws-icon-7 = VIII;
-# ws-icon-default = 
-
-format = <label-state>
-format-font = 1
-
-label-monitor = %name%
-
-; If any values for label-dimmed-N are defined, the workspace/mode
-; colors will get overridden with those values if the monitor is out of focus
-; To only override workspaces in a specific state, use:
-;   label-dimmed-focused
-;   label-dimmed-occupied
-;   label-dimmed-urgent
-;   label-dimmed-empty
-;label-dimmed-foreground = ${color.FOREGROUND}
-;label-dimmed-underline = ${color.YELLOW}
-;label-dimmed-focused-background = ${color.BACKGROUND}
-
-label-focused = %name%
-label-focused-foreground = ${color.BLUE}
-label-focused-background = ${color.BACKGROUND}
-label-focused-underline = ${color.BLUE}
+; focused = Active workspace on focused monitor
+label-focused = %index%
+# label-focused-background = ${colors.background-alt}
+label-focused-underline= ${color.YELLOW}
 label-focused-padding = 1
 
-label-occupied = %name%
-label-occupied-foreground = ${color.GREEN}
-label-occupied-background = ${color.BACKGROUND}
-;label-occupied-underline = ${color.GREEN}
-label-occupied-padding = 1
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 1
 
-label-urgent = %name%
-label-urgent-foreground = ${color.RED}
-label-urgent-background = ${color.BACKGROUND}
-label-urgent-underline = ${color.RED}
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+# label-visible-background = ${self.label-focused-background}
+# label-visible-underline = #f00000
+# label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${color.YELLOW}
 label-urgent-padding = 1
 
-label-empty = %name%
-label-empty-foreground = ${color.FOREGROUND}
-label-empty-padding = 1
-
 ; Separator in between workspaces
-label-separator = "∙"
-label-separator-padding = 0
-label-separator-foreground = ${color.ALTBLACK}
+; label-separator = |
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 

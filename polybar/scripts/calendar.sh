@@ -29,4 +29,3 @@ case "$1" in
         echo "$DATE"
         ;;
 esac
-
