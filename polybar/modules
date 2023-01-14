@@ -303,43 +303,79 @@ format-underline = #16a085
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
+; Xwindow - window titles
+[module/xwindow]
+type = internal/xwindow
+
+label = %title%
+label-maxlen = 80
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
+
+; Monitor specific workspaces on different bars
+pin-workspaces = true
+
+; This will split the workspace name on ':'
+strip-wsnumbers = true
 index-sort = true
-wrapping-scroll = false
 
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-
-label-mode-padding = 1
-label-mode-foreground = #000
-label-mode-background = ${color.BLUE}
-
-; focused = Active workspace on focused monitor
-label-focused = %index%
-# label-focused-background = ${colors.background-alt}
-label-focused-underline= ${color.YELLOW}
+label-focused = %{T2}%name%%{T-}
+label-focused-foreground = ${colors.background}
+label-focused-background = ${colors.YELLOW}
 label-focused-padding = 1
 
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %{T2}%name%%{T-}
 label-unfocused-padding = 1
 
-; visible = Active workspace on unfocused monitor
-label-visible = %index%
-# label-visible-background = ${self.label-focused-background}
-# label-visible-underline = #f00000
-# label-visible-padding = ${self.label-focused-padding}
+label-visible = %{T2}%name%%{T-}
+label-visible-padding = 1
 
-; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-background = ${color.YELLOW}
+label-urgent = %{T2}%name%%{T-}
+label-urgent-background = ${color.GREEN}
 label-urgent-padding = 1
 
-; Separator in between workspaces
-; label-separator = |
+label-mode = %{T2}%mode%%{T-}
+label-mode-foreground = ${color.background}
+label-mode-background = ${color.YELLOW}
+label-mode-padding = 1
+
+# [module/i3]
+# type = internal/i3
+# format = <label-state> <label-mode>
+# index-sort = true
+# wrapping-scroll = false
+
+# ; Only show workspaces on the same output as the bar
+# ;pin-workspaces = true
+
+# label-mode-padding = 1
+# label-mode-foreground = #000
+# label-mode-background = ${color.BLUE}
+
+# ; focused = Active workspace on focused monitor
+# label-focused = %index%
+# # label-focused-background = ${colors.background-alt}
+# label-focused-underline= ${color.YELLOW}
+# label-focused-padding = 1
+
+# ; unfocused = Inactive workspace on any monitor
+# label-unfocused = %index%
+# label-unfocused-padding = 1
+
+# ; visible = Active workspace on unfocused monitor
+# label-visible = %index%
+# # label-visible-background = ${self.label-focused-background}
+# # label-visible-underline = #f00000
+# # label-visible-padding = ${self.label-focused-padding}
+
+# ; urgent = Workspace with urgency hint set
+# label-urgent = %index%
+# label-urgent-background = ${color.YELLOW}
+# label-urgent-padding = 1
+
+# ; Separator in between workspaces
+# ; label-separator = |
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -438,6 +474,92 @@ ramp-signal-3 = 
 ramp-signal-4 =  
 ramp-signal-font = 3
 ramp-signal-foreground = ${color.CYAN}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/workspaces]
+type = internal/xworkspaces
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; Create click handler used to focus desktop
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle desktops
+; Default: true
+enable-scroll = true
+
+; icon-[0-9]+ = <desktop-name>;<icon>
+; NOTE: The desktop name needs to match the name configured by the WM
+; You can get a list of the defined desktops using:
+; $ xprop -root _NET_DESKTOP_NAMES
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+icon-default = 
+
+; Available tags:
+;   <label-monitor>
+;   <label-state> - gets replaced with <label-(active|urgent|occupied|empty)>
+; Default: <label-state>
+format = <label-state>
+format-overline = ${color.BACKGROUND}
+format-underline = ${color.BACKGROUND}
+
+; Available tokens:
+;   %name%
+; Default: %name%
+label-monitor = %name%
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-active = %icon%
+label-active-foreground = ${color.BLACK}
+label-active-background = ${color.GREEN}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-occupied = %icon%
+label-occupied-foreground = ${color.foreground}
+label-occupied-background = ${color.foreground}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-urgent = %icon%
+label-urgent-foreground = ${color.BACKGROUND}
+label-urgent-background = ${color.BACKGROUND}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-empty = %icon%
+label-empty-foreground = ${color.foreground}
+label-empty-background = ${color.background}
+
+label-active-padding = 1
+label-urgent-padding = 1
+label-occupied-padding = 1
+label-empty-padding = 1
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
