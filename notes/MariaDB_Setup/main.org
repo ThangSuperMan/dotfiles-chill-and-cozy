@@ -1,0 +1,3 @@
+* Setup mariadb
+** Create new users
+   + create user 'user_you_would_like_to_create'@'localhost' indentified by 'your_password';

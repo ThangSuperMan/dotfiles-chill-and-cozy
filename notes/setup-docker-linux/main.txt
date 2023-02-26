@@ -1,0 +1,8 @@
+# How to setup the docker running as a sudo rule
+# Tips: thangphan is the user (who you register at the first time when you install the archlinux)
+
+Cmd1: sudo usermod -aG docker thangphan
+Cmd2: su - thanphan
+
+# After running all of thoses command, it's time to quite the terminal
+# and enjoy the result

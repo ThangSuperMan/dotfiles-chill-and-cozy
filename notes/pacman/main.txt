@@ -1,0 +1,64 @@
+#-------------- Pacman --------------# 
+
+# Essentials staff
+sudo pacman -S fish nvim neofetch alacritty firefox
+
+# Devops
+sudo pacman -S docker minikube kubectl
+sudo pacman -S netcat
+
+# Notification
+sudo pacman -S dunst libnotify
+
+# Polybar
+sudo pacman -S polybar
+
+# Peco search filter Fish shell
+sudo pacman -S peco
+
+# Bluetooth
+sudo pacman -S bluz bluz-utils blueman
+
+# Lsp
+# Go
+sudo pacman -S gopls
+
+# Databases
+# Mariadb
+# Fix error can not run the cmd: systemctl start mariadb.service
+# Link: https://serverfault.com/questions/812719/mysql-mariadb-not-starting
+sudo pacman -S mariadb
+
+# Global Keybinding 
+sudo pacman -S sxhkd
+
+# Rofi (Popup search items)
+sudo pacman -S rofi
+
+# Wallpaper
+sudo pacman -S nitrogen
+
+# Color picker
+sudo pacman -S gpick
+
+# Java
+# Search all the java family
+sudo pacman -sS java | grep jre
+
+# Install
+sudo pacman -S extra/jre-openjd
+
+#-------------- Yay --------------# 
+
+# Yay manager the extra package
+# How to install ?
+sudo git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+# Ibus (for typing the vietnamese)
+sudo pacman -S Ibus
+yay -S ibus-bamboo
+
+# Smooth move
+yay -S picom-git

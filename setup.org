@@ -1,0 +1,4 @@
+* Setup
+
+  # Config the current date time for poylybar use
+  timedatectl set-timezone Asia/Vientiane
