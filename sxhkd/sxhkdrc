@@ -5,12 +5,17 @@
 
 # Terminal (Kitty)
 super + Return
-	kitty
+	alacritty
 
 # Brightness friendly with brlllo package
 # Decrease
+# alt + h
+#   sh ~/.config/scripts/changebrightness.sh down 
+
+# Tips you have to run the chmod +x file in the .local/bin directory
+# Just for make sure that it can run everywhere 
 alt + h
-  sh ~/.config/scripts/changebrightness.sh down 
+   changebrightness down
 
 # Increase
 alt + l
@@ -34,6 +39,9 @@ super + d
 
 super + p
 	gpick
+
+super + shift + f 
+  firefox
 
 # Lockscreen
 # Window keyboard
