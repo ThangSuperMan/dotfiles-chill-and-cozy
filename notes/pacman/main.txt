@@ -62,3 +62,9 @@ yay -S ibus-bamboo
 
 # Smooth move
 yay -S picom-git
+
+# Brightness
+yay -S brillo
+
+# Fix can not use the wireless driver wifi
+yay -S boardcom-wl
