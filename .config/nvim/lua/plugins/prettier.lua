@@ -23,7 +23,7 @@ return function()
   vim.api.nvim_exec([[
         augroup FormatAutogroup
           autocmd!
-          autocmd BufWritePost *.mjs,*.ts,*.tsx,*.jsx,*.js,*.lua,*.md,*.mdx,*.yml,*.json,*.svelte,*.sol,*.go, FormatWrite
+          autocmd BufWritePost *.mjs,*.java,*.ts,*.tsx,*.jsx,*.js,*.lua,*.md,*.mdx,*.yml,*.json,*.svelte,*.sol,*.go, FormatWrite
         augroup END
     ]], true)
 
@@ -53,6 +53,15 @@ return function()
       --         }
       --     end
       -- },
+      java = {
+        function()
+          return {
+            exe = "clang-format",
+            args = {"--style=Google", "--assume-filename=.java"},
+            stdin = true
+          }
+        end
+      },
       go = {
         function()
           return { exe = "gofmt", stdin = true }

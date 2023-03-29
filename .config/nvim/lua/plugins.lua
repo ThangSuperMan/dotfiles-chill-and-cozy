@@ -60,7 +60,7 @@ return require('packer').startup(function()
     end
   })
 
---   use { 'preservim/tagbar' }
+  use { 'preservim/tagbar' }
 
   -- Colorizer
   use { 'norcalli/nvim-colorizer.lua', config = require 'plugins.colorizer' }
@@ -79,28 +79,18 @@ return require('packer').startup(function()
   use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
   use { 'hrsh7th/nvim-cmp', config = require 'plugins.cmp' }
 
-  use { 'nvim-telescope/telescope.nvim', config = require 'plugins.telescope' }
+  -- use { 'nvim-telescope/telescope.nvim', config = require 'plugins.telescope' }
+  use { 'nvim-telescope/telescope.nvim' }
+
+  use { 'ibhagwan/fzf-lua',
+    -- optional for icon support
+    requires = { 'nvim-tree/nvim-web-devicons' }
+  }
+
+  -- use { 'junegunn/fzf' }
+  -- use { 'junegunn/fzf.vim', config = require('plugins.fzf') }
 
   use { 'dimaportenko/telescope-simulators.nvim', config = require 'plugins.simulators' }
-
-  -- Write notes
-  -- use { 'nvim-orgmode/orgmode', config = function()
-  -- end }
-  -- use { 'akinsho/org-bullets.nvim', config = function()
-  --   require('org-bullets').setup({
-  --     concealcursor = true, -- If false then when the cursor is on a line underlying characters are visible
-  --     symbols = {
-  --       -- headlines can be a list
-  --       headlines = { "◉", "✿", "○", "✸" },
-  --       -- or a function that receives the defaults and returns a list
-  --       checkboxes = {
-  --         half = { "", "OrgTSCheckboxHalfChecked" },
-  --         done = { "✓", "OrgDone" },
-  --         todo = { "˟", "OrgTODO" },
-  --       },
-  --     }
-  --   })
-  -- end }
 
   -- Comment
   use { 'tpope/vim-commentary' }
@@ -116,32 +106,40 @@ return require('packer').startup(function()
 
   -- Lsp
   use { 'neovim/nvim-lspconfig', config = require 'plugins.lsp' }
-  use({
-    "glepnir/lspsaga.nvim",
-    branch = "main",
+  -- use({
+  --   "glepnir/lspsaga.nvim",
+  --   branch = "main",
+  --   config = require('plugins.saga')
+  -- })
+  use { 'kkharji/lspsaga.nvim',
     config = require('plugins.saga')
-  })
+  }  -- nightly
   use { 'onsails/lspkind-nvim', config = require 'plugins.kind' }
 
   -- debugging
-  --config = require('plugins.lualine')
-  use { 'mfussenegger/nvim-dap', config = require 'plugins.dap' }
-  use { 'leoluz/nvim-dap-go', config = function()
-    require('dap-go').setup()
-  end
-  }
-  use { 'rcarriga/nvim-dap-ui', config = require 'plugins.dapui' }
-  use { 'theHamsta/nvim-dap-virtual-text', config = function()
-    require('nvim-dap-virtual-text').setup()
-    vim.fn.sign_define('DapBreakpoint', { text = '🟥', texthl = '', linehl = '', numhl = '' })
-    vim.fn.sign_define('DapStopped', { text = '🟢', texthl = '', linehl = '', numhl = '' })
-  end }
-  use 'nvim-telescope/telescope-dap.nvim'
+  -- use { 'mfussenegger/nvim-dap', config = require 'plugins.dap' }
+  -- use { 'leoluz/nvim-dap-go', config = function()
+  --   require('dap-go').setup()
+  -- end
+  -- }
+  -- use { 'rcarriga/nvim-dap-ui', config = require 'plugins.dapui' }
+  -- use { 'theHamsta/nvim-dap-virtual-text', config = function()
+  --   require('nvim-dap-virtual-text').setup()
+  --   vim.fn.sign_define('DapBreakpoint', { text = '🟥', texthl = '', linehl = '', numhl = '' })
+  --   vim.fn.sign_define('DapStopped', { text = '🟢', texthl = '', linehl = '', numhl = '' })
+  -- end }
+  -- use 'nvim-telescope/telescope-dap.nvim'
 
   -- Snippet
   use { 'L3MON4D3/LuaSnip' }
   use { 'saadparwaiz1/cmp_luasnip', config = require 'plugins.luasnip' }
 
+  use {
+      "evanleck/vim-svelte",
+      config = function()
+        vim.g.svelte_preprocessors = "typescript"
+      end,
+    }
   -- use { 'beauwilliams/focus.nvim', config = require 'plugins.focus' }
 
   -- Popup window for cmd
@@ -152,7 +150,7 @@ return require('packer').startup(function()
   use { 'romgrk/barbar.nvim', config = require 'plugins.barbar' }
 
   use { 'kyazdani42/nvim-web-devicons' }
-
+  use { 'ryanoasis/vim-devicons' }
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -164,14 +162,6 @@ return require('packer').startup(function()
 
   -- Git
   use { 'tpope/vim-fugitive' }
-
-  -- use {
-  --   'lewis6991/gitsigns.nvim',
-  --   -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
-  --   config = function()
-  --     require('gitsigns').setup()
-  --   end
-  -- }
 
   use { 'dart-lang/dart-vim-plugin' }
 
@@ -215,10 +205,10 @@ return require('packer').startup(function()
     'voldikss/vim-floaterm',
     config = function()
       vim.g.floaterm_wintype = 'float'
-      vim.g.floaterm_position = 'center'
-      vim.g.floaterm_width = 0.8
-      vim.g.floaterm_height = 0.8
-      vim.g.floaterm_keymap_toggle = '<C-\\>'
+      vim.g.floaterm_position = 'bottomright'
+      vim.g.floaterm_width = 0.6
+			vim.g.floaterm_height = 0.5
+			vim.g.floaterm_keymap_toggle = "<C-\\>"
     end
   }
 
@@ -253,22 +243,30 @@ return require('packer').startup(function()
     config = require 'plugins.treesitter'
   }
 
-  use({ "xiyaowong/nvim-transparent", config = function()
-    require("transparent").setup({
-      enable = true, -- boolean: enable transparent
-      extra_groups = {
-        "NeoTreeFileIcon",
-        "NeoTreeExpander"
-      },
-      exclude = {}, -- table: groups you don't want to clear
-    })
-  end })
+  -- use({ "xiyaowong/nvim-transparent", config = function()
+  --   require("transparent").setup({
+  --     extra_groups = {
+  --       "NeoTreeFileIcon",
+  --       "NeoTreeExpander"
+  --     },
+  --     exclude_grops = {}, -- table: groups you don't want to clear
+  --   })
+  -- end })
 
+  use {
+    "dstein64/vim-startuptime",
+    -- lazy-load on a command
+    -- cmd = "StartupTime",
+    -- init is called during startup. Configuration for vim plugins typically should be set in an init function
+    init = function()
+      vim.g.startuptime_tries = 10
+    end,
+  }
   -- use{  'github/copilot.vim', config = require 'plugins.copilot'}
 
   -- reduce the start up time
-  use({ 'lewis6991/impatient.nvim', config = function()
-    require('impatient')
-  end })
+  -- use({ 'lewis6991/impatient.nvim', config = function()
+  --   require('impatient')
+  -- end })
 
 end)

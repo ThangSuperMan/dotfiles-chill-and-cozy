@@ -1,0 +1,52 @@
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+
+##---------- Keybindings for i3-gaps ----------##
+
+alt + Return
+	alacritty
+
+# Brightness friendly with brlllo package
+# Decrease
+# alt + h
+#   sh ~/.config/scripts/changebrightness.sh down 
+
+# Tips you have to run the chmod +x file in the .local/bin directory
+# Just for make sure that it can run everywhere 
+# alt + h
+#   sh ~/.config/scripts/changebrightness.sh down
+
+# Increase
+# alt + l
+#   sh ~/.config/scripts/changebrightness.sh up
+
+##---------- Rofi Launcher & Menus ----------##
+
+# Rofi Menus/Applets
+alt + d
+	rofi -modi drun -show drun -line-padding 4 \
+                -columns 2 -padding 50 -hide-scrollbar -terminal alacritty \
+                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
+
+##---------- Applications ----------##
+
+# Launch Apps
+
+# Color Picker
+# mod + p
+# 	gpick
+
+alt + p
+	gpick
+
+alt + shift + f 
+  firefox
+
+# Lockscreen
+# Window keyboard
+# ctrl + alt + l
+#     betterlockscreen --lock
+
+# Mac keyboard
+ctrl + alt + l
+    betterlockscreen --lock

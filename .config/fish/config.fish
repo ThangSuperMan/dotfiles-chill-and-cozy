@@ -17,18 +17,32 @@ alias lla "ll -A"
 alias g git
 command -qv nvim && alias vim nvim
 
-fish_add_path /opt/homebrew/bin
+# fish_add_path /opt/homebrew/bin
+fish_add_path /usr/bin/fish
 
 alias p "cd Projects/"
 alias n "cd notes/"
 alias v "nvim"
-alias emacs "emacs -nw"
 alias tks "tmux kill-server"
+alias c "clear"
+
+alias tn "tmux new -s (pwd | sed 's/.*\///g')"
+alias ta "tmux attach"
+alias nc "nc -z -vv"
+
+# Docker
+alias dco="docker-compose"
+alias de="docker exec"
+alias dr="docker run"
+alias dps="docker ps"
+alias dpa="docker ps -a"
+alias di="docker images"
 
 # alias ide "tmux split-window -v -p 30 && tmux split-window -h -p 64 && tmux split-window -h -p 50"
-alias ide "tmux split-window -v -p 24 && tmux split-window -h -p 64 && tmux split-window -h -p 50"
+#alias ide "tmux split-window -v -p 24 && tmux split-window -h -p 64 && tmux split-window -h -p 50"
 # Simple ide
-alias ide1 "tmux split-window -v -p 24 "
+#alias ide1 "tmux split-window -v -p 24 "
+alias d "cd Developments"
 alias e "exit"
 
 set -gx EDITOR nvim
