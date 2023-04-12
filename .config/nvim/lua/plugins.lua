@@ -243,15 +243,15 @@ return require('packer').startup(function()
     config = require 'plugins.treesitter'
   }
 
-  -- use({ "xiyaowong/nvim-transparent", config = function()
-  --   require("transparent").setup({
-  --     extra_groups = {
-  --       "NeoTreeFileIcon",
-  --       "NeoTreeExpander"
-  --     },
-  --     exclude_grops = {}, -- table: groups you don't want to clear
-  --   })
-  -- end })
+  use({ "xiyaowong/nvim-transparent", config = function()
+    require("transparent").setup({
+      extra_groups = {
+        "NeoTreeFileIcon",
+        "NeoTreeExpander"
+      },
+      exclude_grops = {}, -- table: groups you don't want to clear
+    })
+  end })
 
   use {
     "dstein64/vim-startuptime",

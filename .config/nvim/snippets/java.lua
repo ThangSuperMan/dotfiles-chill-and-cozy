@@ -59,9 +59,9 @@ local print_line = s(
 )
 
 local print_object = s(
-  "pO",
+  "lgo",
   fmt([[
-    fmt.Println("{} :>> ", {})
+    System.out.println("{} :>> " + {});
   ]],
     {
       i(1, ""),
@@ -69,6 +69,18 @@ local print_object = s(
     }
   )
 )
+
+-- local print_object = s(
+--   "pO",
+--   fmt([[
+--     fmt.Println("{} :>> ", {})
+--   ]],
+--     {
+--       i(1, ""),
+--       i(2, ""),
+--     }
+--   )
+-- )
 
 local halt_on = s(
   "haltOn",

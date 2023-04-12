@@ -1,5 +1,5 @@
 return function()
-    vim.g.bufferline = {
+    vim.g.barbar = {
         animation = true,
         tabpages = true,
         clickable = true,

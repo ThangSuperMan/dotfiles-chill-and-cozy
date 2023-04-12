@@ -208,10 +208,10 @@ return function()
   }
 
   -- ,cmd = { 'jdtls' }
-  nvim_lsp.jdtls.setup {
-    on_attach = on_attach,
-    cmd = { 'jdtls' }
-  }
+  -- nvim_lsp.jdtls.setup {
+  --   on_attach = on_attach,
+  --   cmd = { 'jdtls' }
+  -- }
 
   nvim_lsp.tsserver.setup {
     on_attach = on_attach,

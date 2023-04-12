@@ -55,9 +55,14 @@ keymap.set('n', 'L', 'g_', opts)
 keymap.set('v', 'H', '^', opts)
 keymap.set('v', 'L', 'g_', opts)
 
+-- Lsp
 -- Diagnostic jump can use `<c-o>` to jump back
 keymap.set("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
 keymap.set("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>")
+keymap.set("n", "<leader>oi", '<cmd>lua require("jdtls").organize_imports()<CR>')
+-- keymap.set("n", "gd", '<cmd>lua require("jdtls").organize_imports()<CR>', opts)
+keymap.set("n", "gd", '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 
 -- Float terminal
 keymap.set('n', '<C-e>', '<Cmd>Lspsaga diagnostic_jump_next<CR>')

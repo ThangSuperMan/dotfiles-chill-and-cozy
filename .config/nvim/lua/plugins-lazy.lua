@@ -57,8 +57,9 @@ return require('lazy').setup({
     branch = "v2.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
-    },
+		},
     config = require("plugins.neotree"),
   },
   {
@@ -93,11 +94,12 @@ return require('lazy').setup({
   -- Barbar, bufferline
   { 'romgrk/barbar.nvim', config = require 'plugins.barbar' },
 
-  { 'kyazdani42/nvim-web-devicons' },
-  { 'ryanoasis/vim-devicons' },
+  -- { 'kyazdani42/nvim-web-devicons' },
+  -- { 'ryanoasis/vim-devicons' },
+  { "nvim-tree/nvim-web-devicons" },
   {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = require('plugins.lualine')
   },
 
@@ -107,9 +109,43 @@ return require('lazy').setup({
   { 'neovim/nvim-lspconfig', config = require 'plugins.lsp' },
   { 'onsails/lspkind-nvim', config = require 'plugins.kind' },
 
-	-- install fzf
-	{ "junegunn/fzf" },
-	{ "junegunn/fzf.vim", config = require("plugins.fzf") },
+	{
+		"kevinhwang91/nvim-hlslens",
+		config = function()
+			require("hlslens").setup()
+			local kopts = { noremap = true, silent = true }
+
+			vim.api.nvim_set_keymap(
+				"n",
+				"n",
+				[[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+				kopts
+			)
+			vim.api.nvim_set_keymap(
+				"n",
+				"N",
+				[[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+				kopts
+			)
+			vim.api.nvim_set_keymap("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+			vim.api.nvim_set_keymap("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+			vim.api.nvim_set_keymap("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+			vim.api.nvim_set_keymap("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+
+			vim.api.nvim_set_keymap("n", "<Leader>l", ":noh<CR>", kopts)
+		end,
+	},
+
+	-- Fzf
+	-- { "junegunn/fzf" },
+  { 'ibhagwan/fzf-lua',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+  },
+
+  -- { 'junegunn/fzf.vim', config = require('plugins.fzf') },
+
+	-- { "junegunn/fzf.vim", config = require("plugins.fzf") },
+
   {
 		"vuki656/package-info.nvim",
 		dependencies = "MunifTanjim/nui.nvim",
@@ -134,19 +170,19 @@ return require('lazy').setup({
   { 'kkharji/lspsaga.nvim',
     config = require('plugins.saga')
   },
-  {
-      "xiyaowong/nvim-transparent",
-      config = function()
-        require("transparent").setup({
-          enable = false, -- boolean: enable transparent
-          extra_groups = {
-            "NeoTreeFileIcon",
-            "NeoTreeExpander",
-          },
-          exclude = {}, -- table: groups you don't want to clear
-        })
-      end,
-    },
+  -- {
+  --     "xiyaowong/nvim-transparent",
+  --     config = function()
+  --       require("transparent").setup({
+  --         enable = false, -- boolean: enable transparent
+  --         extra_groups = {
+  --           "NeoTreeFileIcon",
+  --           "NeoTreeExpander",
+  --         },
+  --         exclude = {}, -- table: groups you don't want to clear
+  --       })
+  --     end,
+  --   },
 
   {
     "dstein64/vim-startuptime",

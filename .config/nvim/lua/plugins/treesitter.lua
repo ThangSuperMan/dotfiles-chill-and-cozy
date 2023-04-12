@@ -6,16 +6,15 @@ return function()
   local treesitter = require'nvim-treesitter.configs'.setup {
     highlight = {
       enable = true,
-      disable = {
-      },
+      use_languagetree = true
     },
     indent = {
       enable = true,
-      disable = {},
     },
    ensure_installed = {
      "prisma",
      "javascript",
+     "typescript",
      "java",
      "dart",
      "lua",
@@ -27,42 +26,9 @@ return function()
     autotag = {
       enable = true,
       filetypes = filetypes,
-    }
+    },
   }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
 end
-
--- return function()
--- 	require("nvim-treesitter.install").prefer_git = true
-
--- 	require("nvim-treesitter.configs").setup({
--- 		ensure_installed = {
--- 			"javascript",
--- 			"typescript",
--- 			"json",
--- 			-- "graphql",
--- 			"tsx",
--- 			"html",
--- 			-- "jsdoc",
--- 			-- "rust",
--- 			-- "css",
--- 			"bash",
--- 			"lua",
--- 			"scss",
---       "java",
--- 			"vim",
--- 		},
--- 		autotag = { enable = true },
--- 		indent = { enable = true },
--- 		highlight = { enable = true, use_languagetree = true },
--- 		context_commentstring = { enable = true },
--- 		playground = {
--- 			enable = true,
--- 			disable = {},
--- 			updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
--- 			persist_queries = false, -- Whether the query persists across vim sessions
--- 		},
--- 	})
--- end

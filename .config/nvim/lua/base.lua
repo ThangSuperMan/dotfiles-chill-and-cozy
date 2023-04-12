@@ -17,6 +17,12 @@ vim.cmd('set hidden') -- Required to keep multiple buffers open multiple buffers
 vim.cmd('set lazyredraw') -- Improve scrolling performance when navigating through large results
 vim.cmd('set ttyfast') -- U got a fast terminal
 vim.cmd('set synmaxcol=4096')
+
+-- Filetype plugin indent on
+vim.cmd('set nu rnu')
+vim.cmd('set completeopt=menu,menuone,noselect')
+vim.cmd('set signcolumn=yes')
+vim.cmd('set shortmess+=c')
 -- vim.cmd('set formatoptions-=cro')                  -- Stop newline continution of comments
 -- vim.cmd('set scroll=15')
 vim.cmd('set shortmess+=c')
