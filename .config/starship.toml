@@ -75,8 +75,8 @@ symbol = "jl "
 [kotlin]
 symbol = "kt "
 
-# [nodejs]
-# symbol = "nodejs "
+[nodejs]
+symbol = "⬢ "
 
 [memory_usage]
 symbol = "memory "
