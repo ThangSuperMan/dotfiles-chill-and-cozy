@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Define the screenshots directory
+screenshots_dir="$HOME/Pictures"
+
+# Create the directory if it doesn't exist
+if [ ! -d "$screenshots_dir" ]; then
+  mkdir -p "$screenshots_dir"
+fi
+
+# Options to be displayed
+option0="Screen"
+option1="Area"
+option2="Window"
+
+# Options to be displayed
+options="$option0\n$option1\n$option2"
+
+# Use rofi or dmenu to select the screenshot option
+selected="$(echo -e "$options" | rofi -lines 3 -dmenu -p "Scrot")"
+
+case $selected in
+    $option0)
+        scrot "$screenshots_dir/%Y-%m-%d_%H%M%S_screen.png" ;;
+    $option1)
+        sleep 1 && scrot -s "$screenshots_dir/%Y-%m-%d_%H%M%S_area.png" ;;
+    $option2)
+        sleep 1 && scrot -u "$screenshots_dir/%Y-%m-%d_%H%M%S_window.png" ;;
+esac

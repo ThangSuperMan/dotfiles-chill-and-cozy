@@ -1,127 +1,38 @@
 [character]
-success_symbol = "[](bold green)"
-error_symbol = "[](bold red)"
-vicmd_symbol = "[](bold green)"
+# success_symbol = "[󰁕](bold green)"
+# error_symbol = "[󰁕](bold red)"
+# vicmd_symbol = "[](bold green)"
+success_symbol = "[🞈](#a6e3a1 bold)"
+error_symbol = "[🞈](#f38ba8)"
+vicmd_symbol = "[🞈](#f9e2af)"
 
-[git_commit]
-tag_symbol = " tag "
-
-[git_status]
-ahead = "⇡"
-behind = "⇣"
-diverged = "⇕"
-renamed = "»"
-deleted = "✘"
-stashed = "$"
-untracked = "?"
-
-[aws]
-symbol = "aws "
-
-[c]
-symbol = "C "
-
-[cobol]
-symbol = "cobol "
-
-[conda]
-symbol = "conda "
-
-[crystal]
-symbol = "cr "
-
-[cmake]
-symbol = "cmake "
-
-[lua]
-symbol = "lua "
-
-[dart]
-symbol = "dart "
-
-[deno]
-symbol = "deno "
-
-[dotnet]
-symbol = ".NET "
+# [directory]
+# style = "blue bold"
 
 [directory]
-read_only = " ro"
+format = "[]($style)[(bg:#f5c2e7 fg:#eba0ac)$path](bg:#f5c2e7 fg:#a84c8d)[ ]($style)"
+style = "bg:#fafafa fg:#f5c2e7"
 
-# [docker_context]
-# symbol = "docker "
+[git_branch]
+disabled = true
 
-[elixir]
-symbol = "exs "
+[git_commit]
+disabled = true
 
-[elm]
-symbol = "elm "
+[git_state]
+disabled = true
 
-# [git_branch]
-# symbol = "git "
+[git_metrics]
+disabled = true
 
-[golang]
-symbol = "go "
+[git_status]
+disabled = true
 
-[hg_branch]
-symbol = "hg "
-
-[java]
-symbol = "java "
-
-[julia]
-symbol = "jl "
-
-[kotlin]
-symbol = "kt "
+[dart]
+symbol = " "
 
 [nodejs]
 symbol = "⬢ "
 
-[memory_usage]
-symbol = "memory "
-
-[nim]
-symbol = "nim "
-
-[nix_shell]
-symbol = "nix "
-
-[ocaml]
-symbol = "ml "
-
-[package]
-symbol = " "
-
-[perl]
-symbol = "pl "
-
-[php]
-symbol = "php "
-
-[pulumi]
-symbol = "pulumi "
-
-[purescript]
-symbol = "purs "
-
-[python]
-symbol = "py "
-
-[ruby]
-symbol = "rb "
-
-[rust]
-symbol = "rs "
-
-[scala]
-symbol = "scala "
-
-[spack]
-symbol = "spack "
-
-[sudo]
-symbol = "sudo "
-
-[swift]
-symbol = "swift "
+[java]
+symbol = "java "

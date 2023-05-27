@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+CHOOSE=$(gum choose "fix" "feat" "docs" "refactor" "test" "chore")
+SCOPE=$(gum input --placeholder "scope")
+SUMMARY=$(gum input --placeholder "summary of this change")
+
+test -n "$SCOPE" && SCOPE="($SCOPE)"
+
+DESCRIPTION=$(gum write --placeholder "description of this change")
+
+gum confirm "Commit changes" && git commit -m "$SUMMARY" -m "$DESCRIPTION"

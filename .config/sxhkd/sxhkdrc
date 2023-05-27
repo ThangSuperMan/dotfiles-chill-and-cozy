@@ -1,24 +1,15 @@
 ## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
-##---------- Keybindings for i3-gaps ----------##
+##---------- Keybindings for bspwm ----------##
 
+# Terminal (alacritty)
 alt + Return
 	alacritty
 
-# Brightness friendly with brlllo package
-# Decrease
-# alt + h
-#   sh ~/.config/scripts/changebrightness.sh down 
-
-# Tips you have to run the chmod +x file in the .local/bin directory
-# Just for make sure that it can run everywhere 
-# alt + h
-#   sh ~/.config/scripts/changebrightness.sh down
-
-# Increase
-# alt + l
-#   sh ~/.config/scripts/changebrightness.sh up
+# Quit/Restart bspwm
+alt + shift + {q,r}
+	bspc {quit,wm -r}
 
 ##---------- Rofi Launcher & Menus ----------##
 
@@ -26,27 +17,47 @@ alt + Return
 alt + d
 	rofi -modi drun -show drun -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar -terminal alacritty \
-                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
+                -show-icons -theme $HOME/.config/rofi/themes/launcher.rasi
 
 ##---------- Applications ----------##
 
+alt + shift + e
+     ~/.config/rofi/bin/powermenu
+
 # Launch Apps
+alt + shift + {f,w}
+	{thunar,google-chrome-stable}
 
 # Color Picker
-# mod + p
-# 	gpick
-
 alt + p
-	gpick
+	color-gpick
 
-alt + shift + f 
-  firefox
+# kill window
+# alt + ctrl + Escape
+#     xkill
 
 # Lockscreen
-# Window keyboard
 # ctrl + alt + l
 #     betterlockscreen --lock
 
-# Mac keyboard
+##---------- Bspwm ----------##
+
+# Send focused window to another workspace
+alt + {_,shift + }{1-8}
+	bspc {desktop -f,node -d} '^{1-8}' --follow
+
+alt + {h,j,k,l}
+  bspc node -f {west,south,north,east}
+
+# Window resizing
+# Decrease window width
+ctrl + alt + h
+    bspc node -z right -80 0
+
+# Increase window width
 ctrl + alt + l
-    betterlockscreen --lock
+    bspc node -z right 80 0
+
+# Close App
+alt + {_,shift + }q
+  bspc node -{c,k}
