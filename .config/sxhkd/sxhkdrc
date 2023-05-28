@@ -25,8 +25,14 @@ alt + shift + e
      ~/.config/rofi/bin/powermenu
 
 # Launch Apps
-alt + shift + {f,w}
-	{thunar,google-chrome-stable}
+alt + shift + f
+	thunar
+
+alt + shift + w
+    firefox file:///home/$USER/.config/startpage/index.html
+
+# browser
+ctrl + alt + f
 
 # Color Picker
 alt + p
@@ -49,14 +55,13 @@ alt + {_,shift + }{1-8}
 alt + {h,j,k,l}
   bspc node -f {west,south,north,east}
 
-# Window resizing
-# Decrease window width
+# Resize window smaller
 ctrl + alt + h
-    bspc node -z right -80 0
+    bspc node -z left -20 0 || bspc node -z right -20 0
 
-# Increase window width
+# Resize window larger
 ctrl + alt + l
-    bspc node -z right 80 0
+    bspc node -z right 20 0 || bspc node -z left 20 0
 
 # Close App
 alt + {_,shift + }q

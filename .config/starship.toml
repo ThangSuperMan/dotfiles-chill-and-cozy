@@ -2,19 +2,26 @@
 # success_symbol = "[󰁕](bold green)"
 # error_symbol = "[󰁕](bold red)"
 # vicmd_symbol = "[](bold green)"
-success_symbol = "[🞈](#a6e3a1 bold)"
-error_symbol = "[🞈](#f38ba8)"
-vicmd_symbol = "[🞈](#f9e2af)"
+success_symbol = "[🞈](#a3be8c bold)"
+error_symbol = "[🞈](#eba0ac)"
+vicmd_symbol = "[🞈](#ebcb8b)"
 
 # [directory]
 # style = "blue bold"
 
 [directory]
-format = "[]($style)[(bg:#f5c2e7 fg:#eba0ac)$path](bg:#f5c2e7 fg:#a84c8d)[ ]($style)"
-style = "bg:#fafafa fg:#f5c2e7"
+# format = "[]($style)[(bg:#f5c2e7 fg:#eba0ac)$path](bg:#f5c2e7 fg:#a84c8d)[ ]($style)"
+format = "[]($style)[(bg:#b48ead fg:#eba0ac)$path](bg:#f5c2e7 fg:#a84c8d)[ ]($style)"
+# style = "bg:#2e3440 fg:#f5c2e7"
+style = " fg:#f5c2e7"
 
 [git_branch]
-disabled = true
+format = "[]($style)[[ ](bg:#f5c2e7 fg:#a84c8d bold)$branch](bg:#f5c2e7 fg:#4c4f69)[ ]($style)"
+# style = "bg:#1a1b26 fg:#f5c2e7"
+style = "fg:#f5c2e7"
+
+# [git_branch]
+# disabled = true
 
 [git_commit]
 disabled = true

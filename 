@@ -1,0 +1,416 @@
+* [31mf2eb8fc [m(3 seconds ago) [32mthangsuperman [mAdd new config for starship and sxhkd [33m (HEAD -> master)[m[31m|[m 
+[31m|[m M	.config/starship.toml
+[31m|[m M	.config/sxhkd/sxhkdrc
+[31m|[m A	.local/bin/auto_read_and_run_sql_file
+[31m|[m D	.local/bin/auto_read_and_run_sql_file.sh
+[31m|[m D	.local/bin/changebrightness
+[31m|[m A	.local/bin/commit
+[31m|[m A	.local/bin/dockerclean
+[31m|[m A	.local/bin/duck
+[31m|[m A	.local/bin/float
+[31m|[m A	.local/bin/google
+[31m|[m A	.local/bin/isosec
+[31m|[m D	.local/bin/linkhandler
+[31m|[m A	.local/bin/lynx-customize
+[31m|[m A	.local/bin/path
+[31m|[m A	.local/bin/screenshoot
+[31m|[m A	.local/bin/setup.sh
+[31m|[m A	.local/bin/toemoji
+[31m|[m A	.local/bin/urlencode
+[31m|[m M	.local/bin/watch
+[31m|[m A	package-list.txt
+
+* [31m781a9a9 [m(15 hours ago) [32mthangsuperman [mfeat: migrate to bspwm [33m (origin/master, origin/HEAD)[m[31m|[m 
+[31m|[m A	.config/bspwm/bspwmrc
+[31m|[m A	notes/setup.sh
+
+* [31me0d3033 [m(6 weeks ago) [32mthangsuperman [mfeat: added minimal node js icon for starship [33m[m[31m|[m 
+[31m|[m M	.config/starship.toml
+
+* [31mf21d25d [m(6 weeks ago) [32mthangsuperman [mfeat: added jdtls java config for neovim [33m[m[31m|[m 
+[31m|[m M	.config/nvim/ftplugin/java.lua
+[31m|[m M	.config/nvim/lazy-lock.json
+[31m|[m M	.config/nvim/lua/base.lua
+[31m|[m M	.config/nvim/lua/maps.lua
+[31m|[m R069	.config/nvim/lua/plugins-new.lua	.config/nvim/lua/plugins-lazy.lua
+[31m|[m M	.config/nvim/lua/plugins.lua
+[31m|[m M	.config/nvim/lua/plugins/barbar.lua
+[31m|[m M	.config/nvim/lua/plugins/fzf.lua
+[31m|[m M	.config/nvim/lua/plugins/lsp.lua
+[31m|[m M	.config/nvim/lua/plugins/prettier.lua
+[31m|[m M	.config/nvim/lua/plugins/treesitter.lua
+[31m|[m M	.config/nvim/plugin/packer_compiled.lua
+[31m|[m M	.config/nvim/snippets/java.lua
+
+* [31m3320c27 [m(8 weeks ago) [32mthangsuperman [mfeat: added the list of pacman packages need to install for my workflow [33m[m[31m|[m 
+[31m|[m A	notes/pacman-pkglist.txt
+
+* [31ma997b4a [m(8 weeks ago) [32mthangsuperman [mfeat: add the config file more structure [33m[m[31m|[m 
+[31m|[m A	.config/alacritty/alacritty.yml
+[31m|[m A	.config/bat/config
+[31m|[m A	.config/bat/everforest.tmTheme
+[31m|[m A	.config/dconf/user
+[31m|[m M	.config/fish/config.fish
+[31m|[m D	.config/fish/functions/tide.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/all/finish.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/all/icons.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/all/prompt_colors.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/all/prompt_connection.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/all/prompt_connection_andor_frame_color.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/all/prompt_spacing.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/all/show_time.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/all/style.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/classic/classic_prompt_color.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/classic/classic_prompt_separators.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/lean/lean_prompt_height.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/powerline/powerline_prompt_frame.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/powerline/powerline_prompt_heads.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/powerline/powerline_prompt_height.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/powerline/powerline_prompt_tails.fish
+[31m|[m D	.config/fish/functions/tide/configure/choices/rainbow/rainbow_prompt_separators.fish
+[31m|[m D	.config/fish/functions/tide/configure/configs/classic.fish
+[31m|[m D	.config/fish/functions/tide/configure/configs/classic_16color.fish
+[31m|[m D	.config/fish/functions/tide/configure/configs/lean.fish
+[31m|[m D	.config/fish/functions/tide/configure/configs/lean_16color.fish
+[31m|[m D	.config/fish/functions/tide/configure/configs/rainbow.fish
+[31m|[m D	.config/fish/functions/tide/configure/configs/rainbow_16color.fish
+[31m|[m D	.config/fish/functions/tide/configure/functions/_fake_tide_cache_variables.fish
+[31m|[m D	.config/fish/functions/tide/configure/functions/_fake_tide_item_character.fish
+[31m|[m D	.config/fish/functions/tide/configure/functions/_fake_tide_item_cmd_duration.fish
+[31m|[m D	.config/fish/functions/tide/configure/functions/_fake_tide_item_git.fish
+[31m|[m D	.config/fish/functions/tide/configure/functions/_fake_tide_item_newline.fish
+[31m|[m D	.config/fish/functions/tide/configure/functions/_fake_tide_item_os.fish
+[31m|[m D	.config/fish/functions/tide/configure/functions/_fake_tide_item_prompt_char.fish
+[31m|[m D	.config/fish/functions/tide/configure/functions/_fake_tide_item_pwd.fish
+[31m|[m D	.config/fish/functions/tide/configure/functions/_fake_tide_item_time.fish
+[31m|[m D	.config/fish/functions/tide/configure/functions/_fake_tide_print_item.fish
+[31m|[m D	.config/fish/functions/tide/configure/functions/_fake_tide_prompt.fish
+[31m|[m D	.config/fish/functions/tide/configure/functions/_fake_tide_pwd.fish
+[31m|[m M	.config/i3/config
+[31m|[m A	.config/i3/old-config
+[31m|[m A	.config/nitrogen/bg-saved.cfg
+[31m|[m M	.config/nvim/ftplugin/java.lua
+[31m|[m A	.config/nvim/lazy-lock.json
+[31m|[m M	.config/nvim/lua/base.lua
+[31m|[m M	.config/nvim/lua/maps.lua
+[31m|[m A	.config/nvim/lua/plugins-new.lua
+[31m|[m M	.config/nvim/lua/plugins.lua
+[31m|[m M	.config/nvim/lua/plugins/barbar.lua
+[31m|[m A	.config/nvim/lua/plugins/cursorword.lua
+[31m|[m A	.config/nvim/lua/plugins/fzf.lua
+[31m|[m M	.config/nvim/lua/plugins/lsp.lua
+[31m|[m M	.config/nvim/lua/plugins/neotree.lua
+[31m|[m M	.config/nvim/lua/plugins/prettier.lua
+[31m|[m M	.config/nvim/lua/plugins/saga.lua
+[31m|[m M	.config/nvim/lua/plugins/theme.lua
+[31m|[m M	.config/nvim/lua/plugins/treesitter.lua
+[31m|[m M	.config/nvim/plugin/packer_compiled.lua
+[31m|[m M	.config/nvim/snippets/javascript.lua
+[31m|[m M	.config/nvim/snippets/javascriptreact.lua
+[31m|[m A	.config/peco/config.json
+[31m|[m D	.config/picom/kitty/kitty.conf
+[31m|[m D	.config/picom/neofetch/config.conf
+[31m|[m D	.config/picom/neofetch/images/sakurafetch.png
+[31m|[m A	.config/picom/picom-old.conf
+[31m|[m M	.config/picom/picom.conf
+[31m|[m D	.config/picom/ranger/plugins/__pycache__/__init__.cpython-310.opt-1.pyc
+[31m|[m D	.config/picom/ranger/rc.conf
+[31m|[m D	.config/picom/ranger/rfile.conf
+[31m|[m D	.config/picom/rofi/config.rasi
+[31m|[m D	.config/picom/rofi/power.rasi
+[31m|[m D	.config/picom/rofi/squared-everforest.rasi
+[31m|[m A	.config/polybar/colors
+[31m|[m A	.config/polybar/config.ini
+[31m|[m R100	.config/picom/ranger/plugins/__init__.py	.config/polybar/headset-output
+[31m|[m A	.config/polybar/modules
+[31m|[m A	.config/polybar/scripts/bluetooth.sh
+[31m|[m A	.config/polybar/scripts/calendar.sh
+[31m|[m A	.config/polybar/scripts/earbuds.sh
+[31m|[m A	.config/polybar/scripts/ibus.sh
+[31m|[m A	.config/polybar/scripts/memory.sh
+[31m|[m A	.config/polybar/scripts/updates-pacman-aur.sh
+[31m|[m A	.config/polybar/scripts/wifi-menu.sh
+[31m|[m A	.config/polybar/system
+[31m|[m A	.config/redshift/redshift.conf
+[31m|[m A	.config/starship.toml
+[31m|[m R066	.config/picom/sxhkd/sxhkdrc	.config/sxhkd/sxhkdrc
+
+* [31m5cbdc67 [m(3 months ago) [32mthangsuperman [mfeat: Structured the folder system and added some useful script for setup arch with external monitor [33m[m[31m|[m 
+[31m|[m R100	fish/config-linux.fish	.config/fish/config-linux.fish
+[31m|[m R100	fish/config-osx.fish	.config/fish/config-osx.fish
+[31m|[m R100	fish/config-windows.fish	.config/fish/config-windows.fish
+[31m|[m R100	fish/config.fish	.config/fish/config.fish
+[31m|[m R100	fish/fish_plugins	.config/fish/fish_plugins
+[31m|[m R100	fish/fish_variables	.config/fish/fish_variables
+[31m|[m R100	fish/functions/fish_mode_prompt.fish	.config/fish/functions/fish_mode_prompt.fish
+[31m|[m R100	fish/functions/fish_prompt.fish	.config/fish/functions/fish_prompt.fish
+[31m|[m R100	fish/functions/fish_user_key_bindings.fish	.config/fish/functions/fish_user_key_bindings.fish
+[31m|[m R100	fish/functions/fisher.fish	.config/fish/functions/fisher.fish
+[31m|[m R100	fish/functions/peco_change_directory.fish	.config/fish/functions/peco_change_directory.fish
+[31m|[m R100	fish/functions/peco_select_history.fish	.config/fish/functions/peco_select_history.fish
+[31m|[m R100	fish/functions/tide.fish	.config/fish/functions/tide.fish
+[31m|[m R100	fish/functions/tide/configure/choices/all/finish.fish	.config/fish/functions/tide/configure/choices/all/finish.fish
+[31m|[m R100	fish/functions/tide/configure/choices/all/icons.fish	.config/fish/functions/tide/configure/choices/all/icons.fish
+[31m|[m R100	fish/functions/tide/configure/choices/all/prompt_colors.fish	.config/fish/functions/tide/configure/choices/all/prompt_colors.fish
+[31m|[m R100	fish/functions/tide/configure/choices/all/prompt_connection.fish	.config/fish/functions/tide/configure/choices/all/prompt_connection.fish
+[31m|[m R100	fish/functions/tide/configure/choices/all/prompt_connection_andor_frame_color.fish	.config/fish/functions/tide/configure/choices/all/prompt_connection_andor_frame_color.fish
+[31m|[m R100	fish/functions/tide/configure/choices/all/prompt_spacing.fish	.config/fish/functions/tide/configure/choices/all/prompt_spacing.fish
+[31m|[m R100	fish/functions/tide/configure/choices/all/show_time.fish	.config/fish/functions/tide/configure/choices/all/show_time.fish
+[31m|[m R100	fish/functions/tide/configure/choices/all/style.fish	.config/fish/functions/tide/configure/choices/all/style.fish
+[31m|[m R100	fish/functions/tide/configure/choices/classic/classic_prompt_color.fish	.config/fish/functions/tide/configure/choices/classic/classic_prompt_color.fish
+[31m|[m R100	fish/functions/tide/configure/choices/classic/classic_prompt_separators.fish	.config/fish/functions/tide/configure/choices/classic/classic_prompt_separators.fish
+[31m|[m R100	fish/functions/tide/configure/choices/lean/lean_prompt_height.fish	.config/fish/functions/tide/configure/choices/lean/lean_prompt_height.fish
+[31m|[m R100	fish/functions/tide/configure/choices/powerline/powerline_prompt_frame.fish	.config/fish/functions/tide/configure/choices/powerline/powerline_prompt_frame.fish
+[31m|[m R100	fish/functions/tide/configure/choices/powerline/powerline_prompt_heads.fish	.config/fish/functions/tide/configure/choices/powerline/powerline_prompt_heads.fish
+[31m|[m R100	fish/functions/tide/configure/choices/powerline/powerline_prompt_height.fish	.config/fish/functions/tide/configure/choices/powerline/powerline_prompt_height.fish
+[31m|[m R100	fish/functions/tide/configure/choices/powerline/powerline_prompt_tails.fish	.config/fish/functions/tide/configure/choices/powerline/powerline_prompt_tails.fish
+[31m|[m R100	fish/functions/tide/configure/choices/rainbow/rainbow_prompt_separators.fish	.config/fish/functions/tide/configure/choices/rainbow/rainbow_prompt_separators.fish
+[31m|[m R100	fish/functions/tide/configure/configs/classic.fish	.config/fish/functions/tide/configure/configs/classic.fish
+[31m|[m R100	fish/functions/tide/configure/configs/classic_16color.fish	.config/fish/functions/tide/configure/configs/classic_16color.fish
+[31m|[m R100	fish/functions/tide/configure/configs/lean.fish	.config/fish/functions/tide/configure/configs/lean.fish
+[31m|[m R100	fish/functions/tide/configure/configs/lean_16color.fish	.config/fish/functions/tide/configure/configs/lean_16color.fish
+[31m|[m R100	fish/functions/tide/configure/configs/rainbow.fish	.config/fish/functions/tide/configure/configs/rainbow.fish
+[31m|[m R100	fish/functions/tide/configure/configs/rainbow_16color.fish	.config/fish/functions/tide/configure/configs/rainbow_16color.fish
+[31m|[m R100	fish/functions/tide/configure/functions/_fake_tide_cache_variables.fish	.config/fish/functions/tide/configure/functions/_fake_tide_cache_variables.fish
+[31m|[m R100	fish/functions/tide/configure/functions/_fake_tide_item_character.fish	.config/fish/functions/tide/configure/functions/_fake_tide_item_character.fish
+[31m|[m R100	fish/functions/tide/configure/functions/_fake_tide_item_cmd_duration.fish	.config/fish/functions/tide/configure/functions/_fake_tide_item_cmd_duration.fish
+[31m|[m R100	fish/functions/tide/configure/functions/_fake_tide_item_git.fish	.config/fish/functions/tide/configure/functions/_fake_tide_item_git.fish
+[31m|[m R100	fish/functions/tide/configure/functions/_fake_tide_item_newline.fish	.config/fish/functions/tide/configure/functions/_fake_tide_item_newline.fish
+[31m|[m R100	fish/functions/tide/configure/functions/_fake_tide_item_os.fish	.config/fish/functions/tide/configure/functions/_fake_tide_item_os.fish
+[31m|[m R100	fish/functions/tide/configure/functions/_fake_tide_item_prompt_char.fish	.config/fish/functions/tide/configure/functions/_fake_tide_item_prompt_char.fish
+[31m|[m R100	fish/functions/tide/configure/functions/_fake_tide_item_pwd.fish	.config/fish/functions/tide/configure/functions/_fake_tide_item_pwd.fish
+[31m|[m R100	fish/functions/tide/configure/functions/_fake_tide_item_time.fish	.config/fish/functions/tide/configure/functions/_fake_tide_item_time.fish
+[31m|[m R100	fish/functions/tide/configure/functions/_fake_tide_print_item.fish	.config/fish/functions/tide/configure/functions/_fake_tide_print_item.fish
+[31m|[m R100	fish/functions/tide/configure/functions/_fake_tide_prompt.fish	.config/fish/functions/tide/configure/functions/_fake_tide_prompt.fish
+[31m|[m R100	fish/functions/tide/configure/functions/_fake_tide_pwd.fish	.config/fish/functions/tide/configure/functions/_fake_tide_pwd.fish
+[31m|[m R100	fish/peco_change_directory.fish	.config/fish/peco_change_directory.fish
+[31m|[m R100	i3/config	.config/i3/config
+[31m|[m R100	neofetch/config.conf	.config/neofetch/config.conf
+[31m|[m R100	neofetch/images/sakurafetch.png	.config/neofetch/images/sakurafetch.png
+[31m|[m A	.config/nvim/ftplugin/java.lua
+[31m|[m A	.config/nvim/init.lua
+[31m|[m A	.config/nvim/lua/base.lua
+[31m|[m A	.config/nvim/lua/maps.lua
+[31m|[m A	.config/nvim/lua/plugins.lua
+[31m|[m A	.config/nvim/lua/plugins/alternate.lua
+[31m|[m A	.config/nvim/lua/plugins/barbar.lua
+[31m|[m A	.config/nvim/lua/plugins/bookmark.lua
+[31m|[m A	.config/nvim/lua/plugins/closetag.lua
+[31m|[m A	.config/nvim/lua/plugins/cmp.lua
+[31m|[m A	.config/nvim/lua/plugins/colorizer.lua
+[31m|[m A	.config/nvim/lua/plugins/copilot.lua
+[31m|[m A	.config/nvim/lua/plugins/dap.lua
+[31m|[m A	.config/nvim/lua/plugins/dapui.lua
+[31m|[m A	.config/nvim/lua/plugins/flutter-tools.lua
+[31m|[m A	.config/nvim/lua/plugins/focus.lua
+[31m|[m A	.config/nvim/lua/plugins/kind.lua
+[31m|[m A	.config/nvim/lua/plugins/lsp.lua
+[31m|[m A	.config/nvim/lua/plugins/lualine.lua
+[31m|[m A	.config/nvim/lua/plugins/luasnip.lua
+[31m|[m A	.config/nvim/lua/plugins/mason.lua
+[31m|[m A	.config/nvim/lua/plugins/mind.lua
+[31m|[m A	.config/nvim/lua/plugins/neoscroll.lua
+[31m|[m A	.config/nvim/lua/plugins/neotree.lua
+[31m|[m A	.config/nvim/lua/plugins/null.lua
+[31m|[m A	.config/nvim/lua/plugins/prettier.lua
+[31m|[m A	.config/nvim/lua/plugins/saga.lua
+[31m|[m A	.config/nvim/lua/plugins/shade.lua
+[31m|[m A	.config/nvim/lua/plugins/simulators.lua
+[31m|[m A	.config/nvim/lua/plugins/style.lua
+[31m|[m A	.config/nvim/lua/plugins/telescope.lua
+[31m|[m A	.config/nvim/lua/plugins/template-string.lua
+[31m|[m A	.config/nvim/lua/plugins/theme.lua
+[31m|[m A	.config/nvim/lua/plugins/transparent.lua
+[31m|[m A	.config/nvim/lua/plugins/tree.lua
+[31m|[m A	.config/nvim/lua/plugins/treesitter.lua
+[31m|[m A	.config/nvim/lua/plugins/wilder.lua
+[31m|[m A	.config/nvim/plugin/packer_compiled.lua
+[31m|[m A	.config/nvim/snippets/css.lua
+[31m|[m A	.config/nvim/snippets/dart.lua
+[31m|[m A	.config/nvim/snippets/dockerfile.lua
+[31m|[m A	.config/nvim/snippets/go.lua
+[31m|[m A	.config/nvim/snippets/java.lua
+[31m|[m A	.config/nvim/snippets/javascript.lua
+[31m|[m A	.config/nvim/snippets/javascriptreact.lua
+[31m|[m A	.config/nvim/snippets/rust.lua
+[31m|[m A	.config/nvim/snippets/sh.lua
+[31m|[m A	.config/nvim/snippets/solidity.lua
+[31m|[m A	.config/nvim/snippets/typescript.lua
+[31m|[m A	.config/nvim/snippets/typescriptreact.lua
+[31m|[m A	.config/nvim/snippets/xml.lua
+[31m|[m A	.config/nvim/snippets/yaml.lua
+[31m|[m R100	picom/kitty/kitty.conf	.config/picom/kitty/kitty.conf
+[31m|[m R100	picom/neofetch/config.conf	.config/picom/neofetch/config.conf
+[31m|[m R100	picom/neofetch/images/sakurafetch.png	.config/picom/neofetch/images/sakurafetch.png
+[31m|[m R100	picom/picom.conf	.config/picom/picom.conf
+[31m|[m R100	picom/ranger/plugins/__init__.py	.config/picom/ranger/plugins/__init__.py
+[31m|[m R100	picom/ranger/plugins/__pycache__/__init__.cpython-310.opt-1.pyc	.config/picom/ranger/plugins/__pycache__/__init__.cpython-310.opt-1.pyc
+[31m|[m R100	picom/ranger/rc.conf	.config/picom/ranger/rc.conf
+[31m|[m R100	picom/ranger/rfile.conf	.config/picom/ranger/rfile.conf
+[31m|[m R100	picom/rofi/config.rasi	.config/picom/rofi/config.rasi
+[31m|[m R100	picom/rofi/power.rasi	.config/picom/rofi/power.rasi
+[31m|[m R100	picom/rofi/squared-everforest.rasi	.config/picom/rofi/squared-everforest.rasi
+[31m|[m R100	picom/sxhkd/sxhkdrc	.config/picom/sxhkd/sxhkdrc
+[31m|[m R100	ranger/plugins/__init__.py	.config/ranger/plugins/__init__.py
+[31m|[m R100	ranger/plugins/__pycache__/__init__.cpython-310.opt-1.pyc	.config/ranger/plugins/__pycache__/__init__.cpython-310.opt-1.pyc
+[31m|[m R100	ranger/rc.conf	.config/ranger/rc.conf
+[31m|[m R100	ranger/rfile.conf	.config/ranger/rfile.conf
+[31m|[m R100	rofi/config.rasi	.config/rofi/config.rasi
+[31m|[m R100	rofi/power.rasi	.config/rofi/power.rasi
+[31m|[m R100	rofi/squared-everforest.rasi	.config/rofi/squared-everforest.rasi
+[31m|[m R100	scripts/changebrightness.sh	.config/scripts/changebrightness.sh
+[31m|[m A	.config/scripts/launch_polybar.sh
+[31m|[m A	.config/scripts/setup_monitor.sh
+[31m|[m R100	tmux/gitmux.conf	.config/tmux/gitmux.conf
+[31m|[m M	notes/pacman/main.txt
+[31m|[m D	picom/ranger/plugins/ranger_devicons
+[31m|[m D	ranger/plugins/ranger_devicons
+
+* [31mf6152c3 [m(3 months ago) [32mthangsuperman [mfeat: add some useful scripts with chmod +x permission [33m[m[31m|[m 
+[31m|[m M	sxhkd/sxhkdrc
+
+* [31m31e586e [m(3 months ago) [32mthangsuperman [mfeat: add some useful scripts with chmod +x permission [33m[m[31m|[m 
+[31m|[m A	.local/bin/auto_read_and_run_sql_file.sh
+[31m|[m A	.local/bin/changebrightness
+[31m|[m A	.local/bin/linkhandler
+[31m|[m A	.local/bin/watch
+[31m|[m M	.tmux.conf
+[31m|[m M	fonts/Cascursive/Cascursive Bold.ttf
+[31m|[m A	notes/MariaDB_Setup/main.org
+[31m|[m A	notes/pacman/main.txt
+[31m|[m A	notes/setup-docker-linux/main.txt
+[31m|[m A	setup.org
+
+* [31ma580692 [m(4 months ago) [32mthangsuperman [mfeat: added the git status for tmux statusbar [33m[m[31m|[m 
+[31m|[m A	tmux/gitmux.conf
+
+* [31maba0b3d [m(4 months ago) [32mthangsuperman [mfeat: added the peco config and added some of the useful workspace for polybar and changed some icons for rofi [33m[m[31m|[m 
+[31m|[m A	README.txt
+[31m|[m A	fonts/Cascursive/Cascursive Bold.ttf
+[31m|[m A	fonts/Cascursive/Cascursive Italic.ttf
+[31m|[m A	fonts/Cascursive/Cascursive Regular.ttf
+[31m|[m A	fonts/Recursive/Recursive Bold.ttf
+[31m|[m A	fonts/Recursive/Recursive Italic.ttf
+[31m|[m A	fonts/Recursive/Recursive Regular.ttf
+[31m|[m M	i3/config
+[31m|[m A	peco/config.json
+[31m|[m M	polybar/config.ini
+[31m|[m M	polybar/modules
+[31m|[m M	rofi/squared-everforest.rasi
+
+* [31m6f93ada [m(5 months ago) [32mthangsuperman [mfea: added te bat config and ranger config with the colorscheme [33m[m[31m|[m 
+[31m|[m A	bat/config
+[31m|[m A	bat/everforest.tmTheme
+[31m|[m A	kitty/kitty.conf
+[31m|[m A	neofetch/config.conf
+[31m|[m A	neofetch/images/sakurafetch.png
+[31m|[m A	picom/kitty/kitty.conf
+[31m|[m A	picom/neofetch/config.conf
+[31m|[m A	picom/neofetch/images/sakurafetch.png
+[31m|[m M	picom/picom.conf
+[31m|[m A	picom/ranger/plugins/__init__.py
+[31m|[m A	picom/ranger/plugins/__pycache__/__init__.cpython-310.opt-1.pyc
+[31m|[m A	picom/ranger/plugins/ranger_devicons
+[31m|[m A	picom/ranger/rc.conf
+[31m|[m A	picom/ranger/rfile.conf
+[31m|[m A	picom/rofi/config.rasi
+[31m|[m A	picom/rofi/power.rasi
+[31m|[m A	picom/rofi/squared-everforest.rasi
+[31m|[m A	picom/sxhkd/sxhkdrc
+[31m|[m A	ranger/plugins/__init__.py
+[31m|[m A	ranger/plugins/__pycache__/__init__.cpython-310.opt-1.pyc
+[31m|[m A	ranger/plugins/ranger_devicons
+[31m|[m A	ranger/rc.conf
+[31m|[m A	ranger/rfile.conf
+[31m|[m A	rofi/config.rasi
+[31m|[m A	rofi/power.rasi
+[31m|[m A	rofi/squared-everforest.rasi
+[31m|[m M	sxhkd/sxhkdrc
+
+* [31m60ea69a [m(5 months ago) [32mthangsuperman [mfeat: added auth run xmodmap when connect to the bluetooth device with polybar and change some of the userful keybinding sxkhd for Magic keyboard layout [33m[m[31m|[m 
+[31m|[m A	.gitconfig
+[31m|[m A	.tmux.conf
+[31m|[m M	i3/config
+[31m|[m M	polybar/config.ini
+[31m|[m A	polybar/headset-output
+[31m|[m M	polybar/modules
+[31m|[m M	polybar/scripts/bluetooth.sh
+[31m|[m M	polybar/scripts/calendar.sh
+[31m|[m M	sxhkd/sxhkdrc
+[31m|[m A	wallpapers/forest.jpg
+[31m|[m A	wallpapers/fourth-dimension.png
+
+* [31me9bd628 [m(5 months ago) [32mthangsuperman [mfeat: added the picom for archlinux [33m[m[31m|[m 
+[31m|[m A	fish/config-linux.fish
+[31m|[m A	fish/config-osx.fish
+[31m|[m A	fish/config-windows.fish
+[31m|[m A	fish/config.fish
+[31m|[m A	fish/fish_plugins
+[31m|[m A	fish/fish_variables
+[31m|[m A	fish/functions/fish_mode_prompt.fish
+[31m|[m A	fish/functions/fish_prompt.fish
+[31m|[m A	fish/functions/fish_user_key_bindings.fish
+[31m|[m A	fish/functions/fisher.fish
+[31m|[m A	fish/functions/peco_change_directory.fish
+[31m|[m A	fish/functions/peco_select_history.fish
+[31m|[m A	fish/functions/tide.fish
+[31m|[m A	fish/functions/tide/configure/choices/all/finish.fish
+[31m|[m A	fish/functions/tide/configure/choices/all/icons.fish
+[31m|[m A	fish/functions/tide/configure/choices/all/prompt_colors.fish
+[31m|[m A	fish/functions/tide/configure/choices/all/prompt_connection.fish
+[31m|[m A	fish/functions/tide/configure/choices/all/prompt_connection_andor_frame_color.fish
+[31m|[m A	fish/functions/tide/configure/choices/all/prompt_spacing.fish
+[31m|[m A	fish/functions/tide/configure/choices/all/show_time.fish
+[31m|[m A	fish/functions/tide/configure/choices/all/style.fish
+[31m|[m A	fish/functions/tide/configure/choices/classic/classic_prompt_color.fish
+[31m|[m A	fish/functions/tide/configure/choices/classic/classic_prompt_separators.fish
+[31m|[m A	fish/functions/tide/configure/choices/lean/lean_prompt_height.fish
+[31m|[m A	fish/functions/tide/configure/choices/powerline/powerline_prompt_frame.fish
+[31m|[m A	fish/functions/tide/configure/choices/powerline/powerline_prompt_heads.fish
+[31m|[m A	fish/functions/tide/configure/choices/powerline/powerline_prompt_height.fish
+[31m|[m A	fish/functions/tide/configure/choices/powerline/powerline_prompt_tails.fish
+[31m|[m A	fish/functions/tide/configure/choices/rainbow/rainbow_prompt_separators.fish
+[31m|[m A	fish/functions/tide/configure/configs/classic.fish
+[31m|[m A	fish/functions/tide/configure/configs/classic_16color.fish
+[31m|[m A	fish/functions/tide/configure/configs/lean.fish
+[31m|[m A	fish/functions/tide/configure/configs/lean_16color.fish
+[31m|[m A	fish/functions/tide/configure/configs/rainbow.fish
+[31m|[m A	fish/functions/tide/configure/configs/rainbow_16color.fish
+[31m|[m A	fish/functions/tide/configure/functions/_fake_tide_cache_variables.fish
+[31m|[m A	fish/functions/tide/configure/functions/_fake_tide_item_character.fish
+[31m|[m A	fish/functions/tide/configure/functions/_fake_tide_item_cmd_duration.fish
+[31m|[m A	fish/functions/tide/configure/functions/_fake_tide_item_git.fish
+[31m|[m A	fish/functions/tide/configure/functions/_fake_tide_item_newline.fish
+[31m|[m A	fish/functions/tide/configure/functions/_fake_tide_item_os.fish
+[31m|[m A	fish/functions/tide/configure/functions/_fake_tide_item_prompt_char.fish
+[31m|[m A	fish/functions/tide/configure/functions/_fake_tide_item_pwd.fish
+[31m|[m A	fish/functions/tide/configure/functions/_fake_tide_item_time.fish
+[31m|[m A	fish/functions/tide/configure/functions/_fake_tide_print_item.fish
+[31m|[m A	fish/functions/tide/configure/functions/_fake_tide_prompt.fish
+[31m|[m A	fish/functions/tide/configure/functions/_fake_tide_pwd.fish
+[31m|[m A	fish/peco_change_directory.fish
+[31m|[m M	i3/config
+[31m|[m A	picom/picom.conf
+
+* [31mdec864c [m(5 months ago) [32mthangsuperman [mfeat: added the sxhkd and some useful script with dunst notify for my chill arch linux [33m[m[31m|[m 
+[31m|[m M	i3/config
+[31m|[m A	scripts/changebrightness.sh
+[31m|[m A	sxhkd/sxhkdrc
+
+* [31m467fad7 [m(5 months ago) [32mThangSuperMan [mdelete some of the unessary folder [33m[m[31m|[m 
+[31m|[m D	polybar/dotfiles
+
+* [31mab5362e [m(5 months ago) [32mThangSuperMan [mfirst commit [33m[m  
+  A	i3/config
+  A	polybar/colors
+  A	polybar/config.ini
+  A	polybar/dotfiles
+  A	polybar/modules
+  A	polybar/scripts/bluetooth.sh
+  A	polybar/scripts/calendar.sh
+  A	polybar/scripts/earbuds.sh
+  A	polybar/scripts/ibus.sh
+  A	polybar/scripts/memory.sh
+  A	polybar/scripts/updates-pacman-aur.sh
+  A	polybar/scripts/wifi-menu.sh
+  A	polybar/system
