@@ -12,8 +12,15 @@ keymap.set('n', '<S-Left>', '<M-h> :vertical resize -5<CR>', { noremap = true })
 keymap.set('n', '<S-Right>', '<M-l> :vertical resize +5<CR>', { noremap = true })
 
 -- ESC with kj or jk
-keymap.set('i', 'kj', '<esc>', { noremap = true, silent = true })
+-- keymap.set('i', 'kj', '<esc>', { noremap = true, silent = true })
 keymap.set('i', 'jk', '<esc>', { noremap = true, silent = true })
+
+-- Codium (My AI assistant)
+vim.g.codium_disable_keymaps = true
+keymap.set('i', '<c-;>', function() return vim.fn['codium#CycleCompletions'](1) end, { expr = true })
+keymap.set('i', '<c-,>', function() return vim.fn['codium#CycleCompletions'](-1) end, { expr = true })
+keymap.set('i', '<c-x>', function() return vim.fn['codium#Clear']() end, { expr = true })
+keymap.set('i', '<c-cr>', function() return vim.fn['codium#Accept']() end, { expr = true })
 
 -- Flutter tool
 keymap.set('n', '<leader>fd', '<cmd> FlutterDevices <CR>')
@@ -28,7 +35,7 @@ keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
 
 -- ESC with kj or jk
-keymap.set('i', 'kj', '<esc>', { noremap = true, silent = true })
+-- keymap.set('i', 'kj', '<esc>', { noremap = true, silent = true })
 keymap.set('i', 'jk', '<esc>', { noremap = true, silent = true })
 
 -- Ctrl-s to save
@@ -86,10 +93,10 @@ keymap.set('n', 'ss', ':split<Return><C-w>w')
 keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
 
 -- Move window
-keymap.set('', 'sh', '<C-w>h')
-keymap.set('', 'sk', '<C-w>k')
-keymap.set('', 'sj', '<C-w>j')
-keymap.set('', 'sl', '<C-w>l')
+-- keymap.set('', 'sh', '<C-w>h')
+-- keymap.set('', 'sk', '<C-w>k')
+-- keymap.set('', 'sj', '<C-w>j')
+-- keymap.set('', 'sl', '<C-w>l')
 
 -- Scroll setup
 -- keymap.set('n', '<C-d>', '10<C-d>')

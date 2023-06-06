@@ -1,13 +1,18 @@
 return function()
-    vim.g.barbar = {
+    require'barbar'.setup {
         animation = true,
         tabpages = true,
         clickable = true,
-        icon_close_tab = "",
-        icon_separator_active = "",
-        icon_separator_inactive = ""
-    }
+        icons = {
+        button = "",
+        buffer_index = false,
+        buffer_number = false,
+        active_sep = '',
+        inactive_sep = '',
+        separator = {left = '', right = ''},
+    },
+  }
 
-    -- vim.cmd("hi BufferTabpageFill guibg=NONE")
-    -- vim.cmd("hi TabLine guibg=NONE")
+    vim.cmd("hi BufferTabpageFill guibg=NONE")
+    vim.cmd("hi TabLine guibg=NONE")
 end

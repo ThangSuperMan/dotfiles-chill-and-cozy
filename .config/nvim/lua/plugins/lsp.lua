@@ -14,7 +14,7 @@ return function()
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
     buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    buf_set_keymap('n', '<space>oi', ':lua require("jdtls").organize_imports()<CR>', opts)
+    -- buf_set_keymap('n', '<space>oi', ':lua require("jdtls").organize_imports()<CR>', opts)
     -- buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 
     -- Config with nvim nightly
@@ -27,12 +27,12 @@ return function()
 
     -- Format on save (just for java and jsp)
     -- if client.resolved_capabilities.document_formatting then
-    if client.server_capabilities.document_formatting then
-      vim.api.nvim_command [[augroup Format]]
-      vim.api.nvim_command [[autocmd! * <buffer>]]
-      vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-      vim.api.nvim_command [[augroup END]]
-    end
+    -- if client.server_capabilities.document_formatting then
+    --   vim.api.nvim_command [[augroup Format]]
+    --   vim.api.nvim_command [[autocmd! * <buffer>]]
+    --   vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+    --   vim.api.nvim_command [[augroup END]]
+    -- end
   end
 
   -- Use an on_attach function to only map the following keys
@@ -105,6 +105,10 @@ return function()
     on_attach = on_attach,
   }
 
+  nvim_lsp.clangd.setup{
+    on_attach = on_attach,
+  }
+
   -- nvim_lsp.gopls.setup {
   --   capabilities = capabilities,
   --   on_attach = on_attach,
@@ -164,10 +168,10 @@ return function()
     capabilities = capabilities,
   }
 
-  -- nvim_lsp.pyright.setup {
-  --  on_attach = on_attach,
-  --  capability = capabilities
-  -- }
+  nvim_lsp.pyright.setup {
+   on_attach = on_attach,
+   capability = capabilities
+  }
 
   -- Bash
   -- brew install shellcheck -> for linting(diagnostics)
@@ -189,8 +193,44 @@ return function()
 
   -- Devops
   -- Docker compose
+
+----------------------------------------------------------------------
+--                               YAML                               --
+----------------------------------------------------------------------
+nvim_lsp.yamlls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "yml", "yaml", "yaml.docker-compose", "config" },
+  settings = {
+    yaml = {
+      format = { enable = true },
+      editor = { formatOnType = true },
+      validate = false,
+      schemaDownload = { enable = true },
+      completion = true,
+      hover = true,
+      schemas = {
+        ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
+        ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+        ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
+        ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
+        ["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
+        ["http://json.schemastore.org/ansible-playbook"] = "*play*.{yml,yaml}",
+        ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+        ["https://json.schemastore.org/dependabot-v2"] = ".github/dependabot.{yml,yaml}",
+        ["https://json.schemastore.org/gitlab-ci"] = "*gitlab-ci*.{yml,yaml}",
+        ["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"] = "*api*.{yml,yaml}",
+        ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.{yml,yaml}",
+        ["https://raw.githubusercontent.com/robbyki/schemas/1f05c98df4ca8398f502f554734ff5e87acfcc4c/openshift/all.json"] = "/*.yaml",
+        kubernetes = { "/*.yaml" },
+      },
+    },
+  },
+})
+
   -- nvim_lsp.yamlls.setup {
   --   on_attach = on_attach,
+  --   capability = capabilities,
   --   settings = {
   --     yaml = {
   --       schemas = {
@@ -198,25 +238,33 @@ return function()
   --         ["../path/relative/to/file.yml"] = "/.github/workflows/*",
   --         ["/path/from/root/of/project"] = "/.github/workflows/*",
   --       },
-  --     },
   --   }
-  -- }
+  -- }}
 
   -- Dockerfile
   nvim_lsp.dockerls.setup {
     on_attach = on_attach,
   }
 
-  -- ,cmd = { 'jdtls' }
   -- nvim_lsp.jdtls.setup {
   --   on_attach = on_attach,
   --   cmd = { 'jdtls' }
   -- }
 
+  -- nvim_lsp.denols.setup{
+  --   on_attach = on_attach,
+  --   root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+  -- }
+
   nvim_lsp.tsserver.setup {
     on_attach = on_attach,
+    -- root_dir = nvim_lsp.util.root_pattern("package.json"),
     filetypes = { "typescript", "typescriptreact", "typescript.tsx", "typescript.jsx", "javascript", "javascriptreact" },
   }
+
+  -- nvim_lsp.csharp_ls.setup{
+  --   on_attach = on_attach,
+  -- }
 
   -- nvim_lsp.sourcekit.setup {
   --   on_attach = on_attach,
