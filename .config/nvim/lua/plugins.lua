@@ -52,10 +52,7 @@ return require('lazy').setup({
   -- },
 
   {
-    "lukas-reineke/indent-blankline.nvim", 
-    config = function()
-      require("plugins.indent-blankline")
-    end,
+    "lukas-reineke/indent-blankline.nvim", config = require 'plugins.indent-blankline'
   },
 
   -- { 'lukas-reineke/indent-blankline.nvim' , config = function ()
@@ -70,8 +67,9 @@ return require('lazy').setup({
   --  end
   -- },
 
-  { 'christoomey/vim-tmux-navigator' },
-	{ "psliwka/vim-smoothie" },
+  -- { 'christoomey/vim-tmux-navigator' },
+	{ 'psliwka/vim-smoothie' },
+  { 'dstein64/nvim-scrollview' },
 	{ "sainnhe/everforest", config = require("plugins.theme") },
   -- { "catppuccin/nvim", config = require("plugins.theme") },
   -- { 'zefei/cake16', config =  require("plugins.theme")},
@@ -120,16 +118,14 @@ return require('lazy').setup({
   },
   {
     'voldikss/vim-floaterm',
-    -- keys = {
-    -- 	{ "<C-\\>", "<cmd>FloatermToggle<cr>" },
-    -- 	{ "<C-\\>", "<cmd>FloatermToggle<cr>", { mode = "tnoremap", desc = "Floaterm" } },
-    -- },
+    version = "*",
     config = function()
       vim.g.floaterm_wintype = 'float'
-      vim.g.floaterm_position = 'bottomright'
-      vim.g.floaterm_width = 0.6
-			vim.g.floaterm_height = 0.5
-			vim.g.floaterm_keymap_toggle = "<C-\\>"
+      -- vim.g.floaterm_position = 'bottomright'
+      vim.g.floaterm_position = 'center'
+      vim.g.floaterm_width = 0.8
+			vim.g.floaterm_height = 0.8
+			-- vim.g.floaterm_keymap_toggle = "<F12>"
     end
   },
 

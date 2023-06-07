@@ -1,11 +1,6 @@
 function fish_user_key_bindings
-  # peco
+  # Peco
+  # Notes: \cr -> Control r
   bind \cr peco_select_history # Bind for peco select history to Ctrl+R
-  bind \cf peco_change_directory # Bind for peco change directory to Ctrl+F
-
-  # vim-like
-  bind \cl forward-char
-
-  # prevent iterm2 from closing when typing Ctrl-D (EOF)
-  bind \cd delete-char
+  bind \ca fzf_search_alias    # Bind for search all of alias in my shell
 end

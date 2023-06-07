@@ -11,6 +11,9 @@ keymap.set('n', '<S-Down>', '<M-k> :resize +5<CR>', { noremap = true })
 keymap.set('n', '<S-Left>', '<M-h> :vertical resize -5<CR>', { noremap = true })
 keymap.set('n', '<S-Right>', '<M-l> :vertical resize +5<CR>', { noremap = true })
 
+-- Float terminal
+vim.g.floaterm_keymap_toggle = '<C-\\>'
+
 -- ESC with kj or jk
 -- keymap.set('i', 'kj', '<esc>', { noremap = true, silent = true })
 keymap.set('i', 'jk', '<esc>', { noremap = true, silent = true })
@@ -23,12 +26,12 @@ keymap.set('i', '<c-x>', function() return vim.fn['codium#Clear']() end, { expr 
 keymap.set('i', '<c-cr>', function() return vim.fn['codium#Accept']() end, { expr = true })
 
 -- Flutter tool
-keymap.set('n', '<leader>fd', '<cmd> FlutterDevices <CR>')
-keymap.set('n', '<leader>fD', '<cmd> FlutterDetatch <CR>')
-keymap.set('n', '<leader>ff', '<cmd> Flutter run <CR>')
-keymap.set('n', '<leader>fq', '<cmd> Flutter quite <CR>')
-keymap.set('n', '<leader>fr', '<cmd> Flutter reload <CR>')
-keymap.set('n', '<leader>fR', '<cmd> Flutter restart <CR>')
+-- keymap.set('n', '<leader>fd', '<cmd> FlutterDevices <CR>')
+-- keymap.set('n', '<leader>fD', '<cmd> FlutterDetatch <CR>')
+-- keymap.set('n', '<leader>ff', '<cmd> Flutter run <CR>')
+-- keymap.set('n', '<leader>fq', '<cmd> Flutter quite <CR>')
+-- keymap.set('n', '<leader>fr', '<cmd> Flutter reload <CR>')
+-- keymap.set('n', '<leader>fR', '<cmd> Flutter restart <CR>')
 
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')
