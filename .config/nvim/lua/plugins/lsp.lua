@@ -1,4 +1,5 @@
 return function()
+  local home = vim.fn.expand('~')
   local nvim_lsp = require('lspconfig')
   local protocol = require('vim.lsp.protocol')
   
@@ -51,23 +52,6 @@ return function()
     buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     buf_set_keymap('n', '<space>oi', ':lua require("jdtls").organize_imports()<CR>', opts)
     -- buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-
-    -- Config with nvim nightly
-    -- if client.server_capabilities.documentFormattingProvider then
-    --   vim.api.nvim_command [[augroup Format]]
-    --   vim.api.nvim_command [[autocmd! * <buffer>]]
-    --   vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-    --   vim.api.nvim_command [[augroup END]]
-    -- end
-
-    -- Format on save (just for java and jsp)
-    -- if client.resolved_capabilities.document_formatting then
-    -- if client.server_capabilities.document_formatting then
-    --   vim.api.nvim_command [[augroup Format]]
-    --   vim.api.nvim_command [[autocmd! * <buffer>]]
-    --   vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-    --   vim.api.nvim_command [[augroup END]]
-    -- end
   end
 
   --Enable (broadcasting) snippet capability for completion
@@ -191,9 +175,6 @@ return function()
     }
   }
 
-  -- Devops
-  -- Docker compose
-
 ----------------------------------------------------------------------
 --                               YAML                               --
 ----------------------------------------------------------------------
@@ -201,11 +182,11 @@ nvim_lsp.yamlls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "yml", "yaml", "yaml.docker-compose", "config" },
-  settings = {
+  settings =  {
     yaml = {
       format = { enable = true },
       editor = { formatOnType = true },
-      validate = false,
+      validate = true,
       schemaDownload = { enable = true },
       completion = true,
       hover = true,
@@ -215,7 +196,9 @@ nvim_lsp.yamlls.setup({
         ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
         ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
         ["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
-        ["http://json.schemastore.org/ansible-playbook"] = "*play*.{yml,yaml}",
+        -- Load the ansible json (dictionay for codecompletion) for yamls use
+        ["file://" .. home .. "/.config/nvim/ansible/inventory.yml.json"] = "*inventory*.{yml,yaml}",
+        ["file://" .. home .. "/.config/nvim/ansible/playbook.yml.json"] = "*play*.{yml,yaml}",
         ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
         ["https://json.schemastore.org/dependabot-v2"] = ".github/dependabot.{yml,yaml}",
         ["https://json.schemastore.org/gitlab-ci"] = "*gitlab-ci*.{yml,yaml}",
@@ -227,6 +210,37 @@ nvim_lsp.yamlls.setup({
     },
   },
 })
+
+nvim_lsp.ansiblels.setup{
+  on_attach = on_attach,
+  ansible = {
+    ansible = {
+      path = "ansible"
+    },
+    executionEnvironment = {
+      enabled = false
+    },
+    python = {
+      interpreterPath = "python"
+    },
+    validation = {
+      enabled = true,
+      lint = {
+        enabled = true,
+        path = "ansible-lint"
+      }
+  }
+}
+}
+
+----------------------------------------------------------------------
+--                               Terraform                          --
+----------------------------------------------------------------------
+
+-- nvim_lsp.tflint.setup{
+--   on_attach = on_attach
+-- }
+
 
   -- nvim_lsp.yamlls.setup {
   --   on_attach = on_attach,
@@ -242,9 +256,9 @@ nvim_lsp.yamlls.setup({
   -- }}
 
   -- Dockerfile
-  nvim_lsp.dockerls.setup {
-    on_attach = on_attach,
-  }
+  -- nvim_lsp.dockerls.setup {
+  --   on_attach = on_attach,
+  -- }
 
   -- nvim_lsp.jdtls.setup {
   --   on_attach = on_attach,

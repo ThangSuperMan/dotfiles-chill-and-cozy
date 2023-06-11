@@ -20,6 +20,7 @@ vim.cmd('set synmaxcol=4096')
 -- vim.cmd('set formatoptions-=cro')                  -- Stop newline continution of comments
 -- vim.cmd('set scroll=15')
 vim.cmd('set shortmess+=c')
+
 -- Disable auto comment
 vim.api.nvim_exec([[
 augroup disable_auto_comment
@@ -64,3 +65,16 @@ vim.cmd([[au FileType go set noexpandtab]])
 vim.cmd([[au FileType go set shiftwidth=4]])
 vim.cmd([[au FileType go set softtabstop=4]])
 vim.cmd([[au FileType go set tabstop=4]])
+
+vim.cmd([[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]])
+vim.cmd([[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]])
+vim.cmd([[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]])
+vim.cmd([[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]])
+vim.cmd([[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]])
+vim.cmd([[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]])
+
+-- vim.cmd([[silent! autocmd! filetypedetect BufRead,BufNewFile *.tf]])
+-- vim.cmd([[autocmd BufRead,BufNewFile *.hcl set filetype=hcl]])
+-- vim.cmd([[autocmd BufRead,BufNewFile .terraformrc,terraform.rc set filetype=hcl]])
+-- vim.cmd([[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]])
+-- vim.cmd([[autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json]])

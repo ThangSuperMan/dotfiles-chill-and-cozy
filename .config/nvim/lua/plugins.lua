@@ -44,42 +44,10 @@ return require('lazy').setup({
   { 'L3MON4D3/LuaSnip' },
   { 'saadparwaiz1/cmp_luasnip', config = require 'plugins.luasnip' },
 
-  -- { 'echasnovski/mini.indentscope', config= function()
-  --   require('mini.indentscope').setup({
-  --     symbol = '▏',
-  --   })
-  -- end
-  -- },
-
-  {
-    "lukas-reineke/indent-blankline.nvim", config = require 'plugins.indent-blankline'
-  },
-
-  -- { 'lukas-reineke/indent-blankline.nvim' , config = function ()
-  --      require("indent_blankline").setup({
-  --        show_current_context = false,
-  --        show_current_context_start = true,
-  --        space_char_blankline = " ",
-  --        filetype_exclude = {"help", "txt", "norg", "md"},
-  --        buftype_exclude = {"terminal", "nofile"}
-  --     })
-  --          -- vim.g.indent_blankline_char = "∘"
-  --  end
-  -- },
-
-  -- { 'christoomey/vim-tmux-navigator' },
+  { 'christoomey/vim-tmux-navigator' },
 	{ 'psliwka/vim-smoothie' },
   { 'dstein64/nvim-scrollview' },
 	{ "sainnhe/everforest", config = require("plugins.theme") },
-  -- { "catppuccin/nvim", config = require("plugins.theme") },
-  -- { 'zefei/cake16', config =  require("plugins.theme")},
-  -- { 'christianchiarulli/nvcode-color-schemes.vim', config = require("plugins.theme") }, 
-  -- { 'NLKNguyen/papercolor-theme', config = require("plugins.theme") },
-  -- { "shaunsingh/nord.nvim" },
-  -- { "folke/tokyonight.nvim", lazy = false, priority = 1000, opts = {} },
-  -- { "sainnhe/edge", config = require("plugins.theme") },
-  -- { "catppuccin/nvim", as = "catppuccin", config = require("plugins.theme") },
-  -- { 'folke/tokyonight.nvim', config = require("plugins.theme") },
 
   { "xiyaowong/nvim-transparent", config = function()
     require("transparent").setup({
@@ -97,15 +65,17 @@ return require('lazy').setup({
       vim.g.svelte_preprocessors = "typescript"
     end,
   },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-    },
-    config = require("plugins.neotree"),
-  },
+
+  -- {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   branch = "v2.x",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "MunifTanjim/nui.nvim",
+  --   },
+  --   config = require("plugins.neotree"),
+  -- },
+
   {
     "phaazon/hop.nvim",
     branch = "v2", -- optional but strongly recommended
@@ -114,19 +84,15 @@ return require('lazy').setup({
       require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
       vim.keymap.set("n", "fw", "<cmd>:HopChar2<cr>")
       vim.keymap.set("n", "fe", "<cmd>:HopPattern<cr>")
+      vim.keymap.set("n", "<leader>hl", "<cmd>lua require'hop'.hint_lines()<cr>")
     end,
   },
+  { 'folke/which-key.nvim', config = require 'plugins.which-key' },
   {
-    'voldikss/vim-floaterm',
-    version = "*",
+    "akinsho/toggleterm.nvim",
     config = function()
-      vim.g.floaterm_wintype = 'float'
-      -- vim.g.floaterm_position = 'bottomright'
-      vim.g.floaterm_position = 'center'
-      vim.g.floaterm_width = 0.8
-			vim.g.floaterm_height = 0.8
-			-- vim.g.floaterm_keymap_toggle = "<F12>"
-    end
+      require("plugins.toggleterm")
+    end,
   },
 
   -- Popup window for cmd
@@ -152,15 +118,10 @@ return require('lazy').setup({
 
   { 'MattesGroeger/vim-bookmarks', config = require('plugins.bookmark') },
   { 'tom-anders/telescope-vim-bookmarks.nvim' },
-
-	-- install fzf
-	-- { "junegunn/fzf" },
-  { 'ibhagwan/fzf-lua'
-    -- optional for icon support
-    -- dependencies  = { 'nvim-tree/nvim-web-devicons' }
-  },
-
-	-- { "junegunn/fzf.vim", config = require("plugins.fzf") },
+  { 'nvim-telescope/telescope.nvim', config = require('plugins.telescope') },
+  { 'nvim-lua/plenary.nvim' },
+  {  "nvim-telescope/telescope-file-browser.nvim" },
+  -- { 'ibhagwan/fzf-lua' },
   {
 		"vuki656/package-info.nvim",
 		dependencies = "MunifTanjim/nui.nvim",
@@ -220,6 +181,17 @@ return require('lazy').setup({
   --       })
   --     end,
   --   },
+  -- { 'echasnovski/mini.indentscope', config= function()
+  --   require('mini.indentscope').setup({
+  --     symbol = '▏',
+  --   })
+  -- end
+  -- },
+
+  {"lukas-reineke/indent-blankline.nvim", config = function()
+      require('plugins.indent-blankline')
+      end
+  },
 
   {
     "dstein64/vim-startuptime",
