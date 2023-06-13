@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Console log with object
+# key: logo
+# --
+console.log(`$0 :>> ${$0}`)

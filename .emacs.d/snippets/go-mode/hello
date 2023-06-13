@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: hello
+# key: hello
+# --
+
+package main
+
+import "fmt"
+
+func main() {
+     fmt.Println("hello")$0
+}
