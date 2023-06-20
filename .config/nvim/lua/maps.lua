@@ -19,11 +19,17 @@ keymap.set('n', '<S-Right>', '<M-l> :vertical resize +5<CR>', { noremap = true }
 keymap.set('i', 'jk', '<esc>', { noremap = true, silent = true })
 
 -- Codium (My AI assistant)
-vim.g.codium_disable_keymaps = true
-keymap.set('i', '<c-;>', function() return vim.fn['codium#CycleCompletions'](1) end, { expr = true })
-keymap.set('i', '<c-,>', function() return vim.fn['codium#CycleCompletions'](-1) end, { expr = true })
-keymap.set('i', '<c-x>', function() return vim.fn['codium#Clear']() end, { expr = true })
-keymap.set('i', '<c-cr>', function() return vim.fn['codium#Accept']() end, { expr = true })
+-- vim.g.codium_disable_keymaps = true
+-- keymap.set('i', '<c-;>', function() return vim.fn['codium#CycleCompletions'](1) end, { expr = true })
+-- keymap.set('i', '<c-,>', function() return vim.fn['codium#CycleCompletions'](-1) end, { expr = true })
+-- keymap.set('i', '<c-x>', function() return vim.fn['codium#Clear']() end, { expr = true })
+-- keymap.set('i', '<c-cr>', function() return vim.fn['codium#Accept']() end, { expr = true })
+
+-- Window navigation
+vim.api.nvim_set_keymap('n', '<C-h>', ':wincmd h<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-j>', ':wincmd j<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-k>', ':wincmd k<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-l>', ':wincmd l<CR>', { noremap = true })
 
 -- Flutter tool
 -- keymap.set('n', '<leader>fd', '<cmd> FlutterDevices <CR>')
@@ -43,7 +49,7 @@ keymap.set('i', 'jk', '<esc>', { noremap = true, silent = true })
 
 -- Ctrl-s to save
 keymap.set('n', '<C-s>', ':w!<CR>', { noremap = true })
--- keymap.set('i', 'ww', '<ESC>:w!<CR>', { noremap = true })
+keymap.set('i', 'ww', '<ESC>:w!<CR>', { noremap = true })
 
 -- Fzf
 -- keymap.set('n', ';f', ':lua require("fzf-lua").files()<CR>')
@@ -83,13 +89,18 @@ keymap.set('n', '<Esc><Esc>', ':nohlsearch<CR>', opts)
 -- Select all
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
--- keymap.set('n', ';', ':', opts)
+keymap.set('n', ';', ':', opts)
 
 -- Jump to the last of the still inside the insert mode
 keymap.set('i', '<c-l>', '<C-o>A')
 
 -- New tab
 keymap.set('n', 'te', ':tabedit')
+
+-- Close all buffers
+vim.api.nvim_set_keymap('n', '<C-w><C-k>', ':bufdo :bd<CR>', { noremap = true })
+-- Close current buffer
+vim.api.nvim_set_keymap('n', '<C-w>', ':bd<CR>', { noremap = true })
 
 -- Split window
 keymap.set('n', 'ss', ':split<Return><C-w>w')
@@ -156,6 +167,11 @@ wk.register({
     l = { [[<Cmd>lua _LAZYGIT_TOGGLE()<CR>]], "lazygit" },
     t = { [[<Cmd>ToggleTerm<CR>]], "terminal" },
     q = { [[<Cmd>GoTermClose<CR>]], "go term close" },
+  },
+   ["<leader>n"] = {
+    name = "npm packages",
+    s = { [[<Cmd>lua require("package-info").show()<CR>]], "show" },
+    c = { [[<Cmd>lua require("package-info").hide()<CR>]], "close" },
   },
   ["<leader>i"] = {
     name = "+insert",

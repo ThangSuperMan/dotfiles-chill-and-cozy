@@ -41,6 +41,7 @@ return function()
   local on_attach = function(client, bufnr)
     -- require "lsp_signature".on_attach()  -- Note: add in lsp client on-attach
 
+    require("twoslash-queries").attach(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end

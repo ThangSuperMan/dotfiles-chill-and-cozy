@@ -26,6 +26,8 @@ return require('lazy').setup({
 		config = require("plugins.treesitter"),
 	},
 
+  { "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" } },
+
   -- Colorizer
   { 'norcalli/nvim-colorizer.lua', config = require 'plugins.colorizer' },
 
@@ -44,20 +46,21 @@ return require('lazy').setup({
   { 'L3MON4D3/LuaSnip' },
   { 'saadparwaiz1/cmp_luasnip', config = require 'plugins.luasnip' },
 
-  { 'christoomey/vim-tmux-navigator' },
+  -- { 'christoomey/vim-tmux-navigator' },
 	{ 'psliwka/vim-smoothie' },
   { 'dstein64/nvim-scrollview' },
-	{ "sainnhe/everforest", config = require("plugins.theme") },
+  -- { 'Th3Whit3Wolf/one-nvim', config = require("plugins.theme") },
+  { 'sainnhe/everforest', config = require("plugins.theme") },
 
-  { "xiyaowong/nvim-transparent", config = function()
-    require("transparent").setup({
-      extra_groups = {
-        "NeoTreeFileIcon",
-        "NeoTreeExpander"
-      },
-      exclude_grops = {}, -- table: groups you don't want to clear
-    })
-  end },
+  -- { "xiyaowong/nvim-transparent", config = function()
+  --   require("transparent").setup({
+  --     extra_groups = {
+  --       "NeoTreeFileIcon",
+  --       "NeoTreeExpander"
+  --     },
+  --     exclude_grops = {}, -- table: groups you don't want to clear
+  --   })
+  -- end },
 
   {
     "evanleck/vim-svelte",
@@ -66,15 +69,15 @@ return require('lazy').setup({
     end,
   },
 
-  -- {
-  --   "nvim-neo-tree/neo-tree.nvim",
-  --   branch = "v2.x",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "MunifTanjim/nui.nvim",
-  --   },
-  --   config = require("plugins.neotree"),
-  -- },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+    },
+    config = require("plugins.neotree"),
+  },
 
   {
     "phaazon/hop.nvim",
@@ -115,20 +118,25 @@ return require('lazy').setup({
   -- Lsp
   { 'neovim/nvim-lspconfig', config = require 'plugins.lsp' },
   { 'onsails/lspkind-nvim', config = require 'plugins.kind' },
+  { 'marilari88/twoslash-queries.nvim' },
 
   { 'MattesGroeger/vim-bookmarks', config = require('plugins.bookmark') },
   { 'tom-anders/telescope-vim-bookmarks.nvim' },
-  { 'nvim-telescope/telescope.nvim', config = require('plugins.telescope') },
+  -- { 'nvim-telescope/telescope.nvim', config = require('plugins.telescope') },
   { 'nvim-lua/plenary.nvim' },
   {  "nvim-telescope/telescope-file-browser.nvim" },
-  -- { 'ibhagwan/fzf-lua' },
+
+  -- Fzf
+  { "junegunn/fzf" },
+	{ "junegunn/fzf.vim", config = require("plugins.fzf") },
+
   {
 		"vuki656/package-info.nvim",
 		dependencies = "MunifTanjim/nui.nvim",
 		config = function()
 			require("package-info").setup()
-			vim.keymap.set({ "n" }, "<LEADER>ns", require("package-info").show, { silent = true, noremap = true })
-			vim.keymap.set({ "n" }, "<LEADER>nc", require("package-info").hide, { silent = true, noremap = true })
+			-- vim.keymap.set({ "n" }, "<LEADER>ns", require("package-info").show, { silent = true, noremap = true })
+			-- vim.keymap.set({ "n" }, "<LEADER>nc", require("package-info").hide, { silent = true, noremap = true })
 		end,
 	},
 	{
